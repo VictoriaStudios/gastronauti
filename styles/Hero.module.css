@@ -1,0 +1,9 @@
+.heroWrapper {
+    position: relative;
+    width: 100vw;
+    height:80vh;
+}
+
+.heroBG {
+    opacity: 0.95;
+}

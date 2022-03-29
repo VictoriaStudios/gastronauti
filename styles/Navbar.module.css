@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     align-items:center;
-    height:20vh;
+    height:5vh;
     width: 100vw;
     background-color: white;
   }
 
 .navElement {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 .navElement:hover {
