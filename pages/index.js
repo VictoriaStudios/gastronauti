@@ -1,9 +1,13 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import More from '../components/More'
 import styles from '../styles/Home.module.css'
+import { useRef } from 'react'
 
 export default function Home() {
+  const moreRef = useRef()
+
   return (
     <div>
       <Head>
@@ -13,7 +17,10 @@ export default function Home() {
       </Head>
       <Layout>
         <main>
-          <Hero/>
+          <Hero moreRef={moreRef} />
+          <div ref={moreRef}>
+            <More />
+          </div>
         </main>
       </Layout>
     </div>

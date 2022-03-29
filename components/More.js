@@ -1,8 +1,10 @@
-import React from 'react'
+import styles from '../styles/More.module.css'
 
-const More = () => {
+const More = (props) => {
   return (
-    <div>More</div>
+    <div className={styles.moreWrapper}>
+        More
+    </div>
   )
 }
 
