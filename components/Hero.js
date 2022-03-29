@@ -6,6 +6,11 @@ import { scrollTo } from '../utilities/scrollTo'
 
 
 const Hero = (props) => {
+  const handleScroll = (ref) => {
+    if (ref) scrollTo (ref)
+  }
+
+
   return (
     <div className={styles.heroWrapper}>
       {console.log (props)}
@@ -21,7 +26,7 @@ const Hero = (props) => {
         <h1 className={styles.heroTitle}>Kosten optimieren.</h1>
         <div className={styles.heroTitle}>
           <h1 style={{ display: "inline" }}>Alles aus einer </h1>
-          <h1 onClick={() => scrollTo(props.moreRef)} className={styles.heroHighlight} style={{ display: "inline" }}>Hand</h1>
+          <h1 onClick={() => handleScroll(props.scrollRef)} className={styles.heroHighlight} style={{ display: "inline" }}>Hand</h1>
         </div>
       </div>
     </div>

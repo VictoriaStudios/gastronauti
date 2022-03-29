@@ -17,7 +17,7 @@ export default function Home() {
       </Head>
       <Layout>
         <main>
-          <Hero moreRef={moreRef} />
+          <Hero scrollRef={moreRef} />
           <div ref={moreRef}>
             <More />
           </div>
