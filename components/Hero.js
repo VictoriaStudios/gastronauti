@@ -16,10 +16,10 @@ const Hero = (props) => {
         objectFit='cover'
       />
       <div className={styles.heroCard}>
-        <h1>Umsatz erhöhen.</h1>
-        <h1>Prozesse automatisieren.</h1>
-        <h1>Kosten optimieren.</h1>
-        <div>
+        <h1 className={styles.heroTitle}>Umsatz erhöhen.</h1>
+        <h1 className={styles.heroTitle}>Prozesse automatisieren.</h1>
+        <h1 className={styles.heroTitle}>Kosten optimieren.</h1>
+        <div className={styles.heroTitle}>
           <h1 style={{ display: "inline" }}>Alles aus einer </h1>
           <h1 onClick={() => scrollTo(props.moreRef)} className={styles.heroHighlight} style={{ display: "inline" }}>Hand</h1>
         </div>

@@ -27,6 +27,11 @@
     color:var(--color-headlines);
 }
 
+.heroTitle{
+    width:100%;
+    text-align: center;
+}
+
 .heroHighlight {
     color:var(--color-primary);
     cursor: pointer;
