@@ -1,0 +1,17 @@
+.navWrapper {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height:20vh;
+    width: 100vw;
+    background-color: white;
+  }
+
+.navElement {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+.navElement:hover {
+  color: var(--color-primary);
+}
