@@ -25,6 +25,10 @@ a {
   box-sizing: border-box;
 }
 
+h1 {
+  size:2rem;
+}
+
 .nav-wrapper {
   display: flex;
 }
