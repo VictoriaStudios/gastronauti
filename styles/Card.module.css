@@ -1,8 +1,28 @@
 .cardWrapper{
-    height:100%;
+    position: relative;
+    height:90%;
 }
 
 .cardBody{
-    margin: 5px;
+    position: relative;
+    height:90%;
+    margin: 10px;
     padding: 5px;
+}
+
+.cardBody:hover{
+    background-color: var(--color-primary);
+}
+
+.cardImage{
+    position: relative;
+    height:70%;
+    opacity: 0.7;
+}
+
+
+
+.cardText{
+    color:var(--color-text);
+    text-align: center;
 }

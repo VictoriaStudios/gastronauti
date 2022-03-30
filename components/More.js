@@ -7,9 +7,9 @@ const More = (props) => {
 
   return (
     <div className={styles.moreWrapper}>
-        <Card width={width}/>
-        <Card width={width}/>
-        <Card width={width}/>
+        <Card width={width} src='/icon-cogs.png'> <h4>Module & Erweiterungen</h4> </Card>
+        <Card width={width} src='/icon-newspaper.png'> <h4>Gastronomie-Konzepte</h4> </Card>
+        <Card width={width} src='/icon-restaurant.png'> <h4>Blog & Kundenstimmen</h4> </Card>
     </div>
   )
 }
