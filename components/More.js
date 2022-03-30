@@ -2,7 +2,7 @@ import styles from '../styles/More.module.css'
 import { Card } from './Card'
 
 const More = (props) => {
-  const width="450px"
+  const width="150"
 
 
   return (

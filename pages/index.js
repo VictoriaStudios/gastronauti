@@ -4,9 +4,10 @@ import Hero from '../components/Hero'
 import More from '../components/More'
 import styles from '../styles/Home.module.css'
 import { useRef } from 'react'
+import Introduction from '../components/Introduction'
 
 export default function Home() {
-  const moreRef = useRef()
+  const introRef = useRef()
 
   return (
     <div>
@@ -17,9 +18,10 @@ export default function Home() {
       </Head>
       <Layout>
         <main>
-          <Hero scrollRef={moreRef} />
-          <div ref={moreRef}>
+          <Hero scrollRef={introRef} />
             <More />
+          <div ref={introRef}>
+            <Introduction/>
           </div>
         </main>
       </Layout>
