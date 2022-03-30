@@ -1,0 +1,23 @@
+.introWrapper {
+    position: relative;
+    width: 85vw;
+    margin:auto;
+}
+
+.introTitle {
+    text-align: center;
+}
+
+.introContent {
+    width:100%;
+    display: flex;
+}
+
+.introVideo {
+    width:50%;
+    height:290px;
+}
+
+.introText {
+    width:50%
+}
