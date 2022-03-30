@@ -8,6 +8,7 @@ import Introduction from '../components/Introduction'
 
 export default function Home() {
   const introRef = useRef()
+  const kontaktRef = useRef()
 
   return (
     <div>
@@ -23,6 +24,10 @@ export default function Home() {
           <div ref={introRef}>
             <Introduction/>
           </div>
+          <div className='placeholder'>Kassensystem</div>
+          <div className='placeholder'>Virtueller Stammtisch</div>
+          <div className='placeholder'>Blog</div>
+          <div className='placeholder' ref={kontaktRef}>Kontakformular</div>
         </main>
       </Layout>
     </div>

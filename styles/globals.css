@@ -37,3 +37,8 @@ h2{
 .nav-wrapper {
   display: flex;
 }
+
+.placeholder{
+  height:30vh;
+  font-size:3rem;
+}

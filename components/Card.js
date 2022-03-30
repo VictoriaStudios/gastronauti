@@ -5,7 +5,6 @@ import styles from '../styles/Card.module.css'
 export const Card = (props) => {
     return (
         <section>
-            {console.log (props.width)}
         <div className={styles.cardWrapper} style={{ width: props.width }}>
             <div className={styles.cardBody}>
                 <div className={styles.cardImage}>

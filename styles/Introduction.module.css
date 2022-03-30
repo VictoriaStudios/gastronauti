@@ -6,6 +6,7 @@
 
 .introTitle {
     text-align: center;
+    color: var(--color-text);
 }
 
 .introContent {
@@ -14,10 +15,12 @@
 }
 
 .introVideo {
+    position: relative;
     width:50%;
     height:290px;
 }
 
 .introText {
-    width:50%
+    width:50%;
+    color: var(--color-text);
 }

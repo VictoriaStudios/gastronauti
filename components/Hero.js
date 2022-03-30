@@ -13,7 +13,6 @@ const Hero = (props) => {
 
   return (
     <div className={styles.heroWrapper}>
-      {console.log (props)}
       <Image
         className={styles.heroBG}
         src='/hero_bg.jpg'
