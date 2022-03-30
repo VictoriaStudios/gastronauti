@@ -26,6 +26,7 @@ export default function Home() {
           </div>
           <div className='placeholder'>Kassensystem</div>
           <div className='placeholder'>Virtueller Stammtisch</div>
+          <div className='placeholder'>Empfehlungen</div>
           <div className='placeholder'>Blog</div>
           <div className='placeholder' ref={kontaktRef}>Kontakformular</div>
         </main>

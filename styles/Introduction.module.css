@@ -24,3 +24,22 @@
     width:50%;
     color: var(--color-text);
 }
+
+@media (min-width: 1200px) {
+    .introWrapper {
+        width:75vw;
+    }
+}
+
+@media (min-width: 1400px) {
+    .introWrapper {
+        width:70vw;
+    }
+}
+
+
+@media (min-width: 1700px) {
+    .introWrapper {
+        width:60vw;
+    }
+}

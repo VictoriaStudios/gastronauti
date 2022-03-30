@@ -8,6 +8,9 @@ const Layout = (props) => {
             <Navbar/>
         </header>
         {props.children}
+        <footer className='placeholder'>
+          Footer
+        </footer>
     </div>
   )
 }
