@@ -4,7 +4,7 @@
 
 .cardBody{
     position: relative;
-    margin: 10px;
+    margin: 10px 100px 10px 100px;
     transition: 0.25s;
 }
 
@@ -32,3 +32,8 @@
     text-align: center;
 }
 
+@media (max-width:1150px) {
+    .cardBody{
+        margin: 10px 30px 10px 30px;
+    }
+}
