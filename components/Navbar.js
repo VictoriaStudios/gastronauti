@@ -1,11 +1,19 @@
 import Link from 'next/link'
 import React from 'react'
 import styles from '../styles/Navbar.module.css'
+import Image from 'next/image'
 
 const Navbar = () => {
   return (
     <nav>
         <div className={styles.navWrapper}>
+        <div style={{position:'relative',  top:'7px'}}>
+        <Image
+          src='/logo.png'
+          width='30'
+          height='30'
+        />
+        </div>
         <Link href="/konzepte"><a className={styles.navElement}> Konzepte </a></Link>
         <Link href="/module"><a className={styles.navElement}> Module </a></Link>
         <Link href="/hardware"><a className={styles.navElement}> Hardware </a></Link>

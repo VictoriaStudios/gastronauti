@@ -2,9 +2,10 @@
     display: flex;
     justify-content: center;
     align-items:center;
-    height:5vh;
     width: 100vw;
     background-color: white;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
   }
 
 .navElement {
