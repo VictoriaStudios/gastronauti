@@ -17,6 +17,7 @@
 .cardBody:hover{
     background-color: var(--color-primary);
     transform: translateY(-3%);
+    cursor: pointer;
 }
 
 .cardImage{

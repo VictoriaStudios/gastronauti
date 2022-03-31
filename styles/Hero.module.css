@@ -38,19 +38,15 @@
     color: var(--color-primary);
     cursor: pointer;
     margin-block-end: 0;
-    /*animation: glow 1s infinite alternate;*/
+    transition:.3s;
+}
+
+.heroHighlight:hover{
+    color:var(--color-text);
 }
 
 
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px rgba(255, 255, 35, 0.75);
-    }
 
-    to {
-        text-shadow: none;
-    }
-}
 
 
 @media (max-width:700px) {

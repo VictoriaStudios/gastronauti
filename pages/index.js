@@ -9,6 +9,10 @@ import Introduction from '../components/Introduction'
 export default function Home() {
   const introRef = useRef()
   const kontaktRef = useRef()
+  const kassenRef = useRef()
+  const gastroRef = useRef()
+  const blogRef  = useRef()
+
 
   return (
     <div>
@@ -20,14 +24,15 @@ export default function Home() {
       <Layout>
         <main>
           <Hero scrollRef={introRef} />
-            <More />
+            <More kassenRef={kassenRef} gastroRef={gastroRef} blogRef={blogRef} />
           <div ref={introRef}>
             <Introduction scrollRef={kontaktRef}/>
           </div>
-          <div className='placeholder'>Kassensystem</div>
+          <div ref={kassenRef} className='placeholder'>Kassensystem</div>
           <div className='placeholder'>Virtueller Stammtisch</div>
+          <div ref={gastroRef} className='placeholder'>Gastronomie-Konzepte</div>
+          <div ref={blogRef} className='placeholder'>Blog</div>
           <div className='placeholder'>Empfehlungen</div>
-          <div className='placeholder'>Blog</div>
           <div className='placeholder' ref={kontaktRef}>Kontakformular</div>
         </main>
       </Layout>
