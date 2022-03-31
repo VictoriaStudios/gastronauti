@@ -7,8 +7,19 @@
     margin: 10px;
 }
 
+.cardbodyReverseAnimation{
+    background-color: var(--color-primary);
+    animation-direction: reverse;
+    animation-name: highlightIcon;
+    animation-fill-mode: forwards;
+    animation-duration: .25s;
+}
+
 .cardBody:hover{
     background-color: var(--color-primary);
+    animation-name: highlightIcon;
+    animation-fill-mode: forwards;
+    animation-duration: .25s;
 }
 
 .cardImage{
@@ -22,4 +33,10 @@
 .cardText{
     color:var(--color-text);
     text-align: center;
+}
+
+@keyframes highlightIcon {
+    0% {background-color: transparent;}
+    100% {background-color: var(--color-primary);
+    transform: translateY(-3%);}
 }

@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import styles from '../styles/Card.module.css'
+import { useState } from 'react'
 
 
 export const Card = (props) => {
+    const [isReversing, setIsReversing] = useState(false)
+
     return (
         <section>
         <div className={styles.cardWrapper} style={{ width: props.width }}>
@@ -10,8 +13,6 @@ export const Card = (props) => {
                 <div className={styles.cardImage}>
                     {props.src ? <Image
                         src={props.src}
-                        // layout='fill'
-                        // objectFit='contain'
                         height={props.width}
                         width={props.width}
                     /> : ''}
