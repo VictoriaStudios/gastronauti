@@ -1,7 +1,9 @@
 import styles from '../styles/Introduction.module.css'
 import Image from 'next/image'
+import Button from './Button'
+import { scrollTo } from '../utilities/scrollTo'
 
-const Introduction = () => {
+const Introduction = (props) => {
     return (
         <section className={styles.introWrapper}>
             <h1 className={styles.introTitle}>Die intelligente All-In-One-Lösung</h1>
@@ -17,6 +19,7 @@ const Introduction = () => {
                 <div className={styles.introText}>
                     <h3>Sie möchten die Abläufe in Ihrem Betrieb effizienter gestalten? Prozesse automatisieren? Ihren Wareneinsatz senken? Ihren Umsatz steigern? Personalkosten optimieren? Die Gästezufriedenheit steigern? Und möchten am Ende mehr Zeit für Ihre Gäste haben?</h3>
                     <h3>Dann ist gastronauti genau der richtige Partner an Ihrer Seite!</h3>
+                    <Button onClick={() => scrollTo(props.scrollRef)}>Gastronauti kennenlernen</Button>
                 </div>
             </div>
         </section>

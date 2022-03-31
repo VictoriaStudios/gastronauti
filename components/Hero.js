@@ -24,8 +24,8 @@ const Hero = (props) => {
         <h1 className={styles.heroTitle}>Prozesse automatisieren.</h1>
         <h1 className={styles.heroTitle}>Kosten optimieren.</h1>
         <div className={styles.heroTitle} style={{marginBlockStart:"1.33em", marginBlockEnd:"1.33em"}}>
-          <h1 style={{ display: "inline" }}>Alles aus einer </h1>
-          <h1 onClick={() => handleScroll(props.scrollRef)} className={styles.heroHighlight} style={{ display: "inline" }}>Hand</h1>
+          <h1 className={styles.heroLineTitle} style={{ display: "inline" }}>Alles aus einer </h1>
+          <h1 className={`${styles.heroLineTitle} ${styles.heroHighlight}`} onClick={() => handleScroll(props.scrollRef)} style={{ display: "inline" }}>Hand</h1>
         </div>
       </div>
     </div>

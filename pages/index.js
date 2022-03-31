@@ -22,7 +22,7 @@ export default function Home() {
           <Hero scrollRef={introRef} />
             <More />
           <div ref={introRef}>
-            <Introduction/>
+            <Introduction scrollRef={kontaktRef}/>
           </div>
           <div className='placeholder'>Kassensystem</div>
           <div className='placeholder'>Virtueller Stammtisch</div>
