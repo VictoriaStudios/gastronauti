@@ -4,7 +4,7 @@ import { scrollTo } from '../utilities/scrollTo'
 
 export const Card = (props) => {
     return (
-        <section onClick={() => scrollTo(props.scrollRef)}>
+        <section onClick={() => scrollTo(props.scrollRef || '')}>
             <div className={styles.cardWrapper} style={{ width: props.width }}>
                 <div className={styles.cardBody}>
                     <div className={styles.cardImage}>
