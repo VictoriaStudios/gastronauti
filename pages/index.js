@@ -5,13 +5,14 @@ import More from '../components/More'
 import styles from '../styles/Home.module.css'
 import { useRef } from 'react'
 import Introduction from '../components/Introduction'
+import Kassensystem from '../components/Kassensystem'
 
 export default function Home() {
   const introRef = useRef()
   const kontaktRef = useRef()
   const kassenRef = useRef()
   const gastroRef = useRef()
-  const blogRef  = useRef()
+  const blogRef = useRef()
 
 
   return (
@@ -24,11 +25,13 @@ export default function Home() {
       <Layout>
         <main>
           <Hero scrollRef={introRef} />
-            <More kassenRef={kassenRef} gastroRef={gastroRef} blogRef={blogRef} />
+          <More kassenRef={kassenRef} gastroRef={gastroRef} blogRef={blogRef} />
           <div ref={introRef}>
-            <Introduction scrollRef={kontaktRef}/>
+            <Introduction scrollRef={kontaktRef} />
           </div>
-          <div ref={kassenRef} className='placeholder'>Kassensystem</div>
+          <div ref={kassenRef}>
+            <Kassensystem/>
+          </div>
           <div className='placeholder'>Virtueller Stammtisch</div>
           <div ref={gastroRef} className='placeholder'>Gastronomie-Konzepte</div>
           <div ref={blogRef} className='placeholder'>Blog</div>

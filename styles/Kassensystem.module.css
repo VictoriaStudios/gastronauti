@@ -13,4 +13,38 @@
 .kassenContent {
     width:100%;
     display: flex;
+    justify-content: center;
+}
+
+.kassenImage {
+    position: relative;
+    width:50%;
+    height:290px;
+}
+
+.kassenText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:50%;
+    color: var(--color-text);
+}
+
+@media (min-width: 1200px) {
+    .kassenWrapper {
+        width:75vw;
+    }
+}
+
+@media (min-width: 1400px) {
+    .kassenWrapper {
+        width:70vw;
+    }
+}
+
+
+@media (min-width: 1700px) {
+    .kassenWrapper {
+        width:60vw;
+    }
 }
