@@ -1,0 +1,16 @@
+.kassenWrapper {
+    position: relative;
+    width: 85vw;
+    margin:auto;
+    margin-bottom: 2rem;
+}
+
+.kassenTitle {
+    text-align: center;
+    color: var(--color-headlines);
+}
+
+.kassenContent {
+    width:100%;
+    display: flex;
+}
