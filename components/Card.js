@@ -10,8 +10,8 @@ export const Card = (props) => {
                     <div className={styles.cardImage}>
                         {props.src ? <Image
                             src={props.src}
-                            height={props.width}
-                            width={props.width}
+                            height={props.imgWidth || 100}
+                            width={props.imgWidth || 100}
                         /> : ''}
                     </div>
                     <div className={styles.cardText}>

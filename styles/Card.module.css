@@ -8,11 +8,6 @@
     transition: 0.25s;
 }
 
-.cardbodyReverseAnimation{
-    animation-direction: reverse;
-    animation-name: highlightIcon;
-    animation-duration: .25s;
-}
 
 .cardBody:hover{
     background-color: var(--color-primary);
@@ -27,8 +22,8 @@
 }
 
 
-
 .cardText{
+    position: relative;
     color:var(--color-text);
     text-align: center;
 }
