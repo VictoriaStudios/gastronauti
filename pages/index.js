@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 import { useRef } from 'react'
 import Introduction from '../components/Introduction'
 import Kassensystem from '../components/Kassensystem'
+import Empfehlungen from '../components/Empfehlungen'
 
 export default function Home() {
   const introRef = useRef()
@@ -13,6 +14,7 @@ export default function Home() {
   const kassenRef = useRef()
   const gastroRef = useRef()
   const blogRef = useRef()
+  const empfehlungsRef = useRef()
 
 
   return (
@@ -33,7 +35,9 @@ export default function Home() {
             <Kassensystem scrollRef={kontaktRef}/>
           </div>
           <div ref={blogRef} className='placeholder'>Blog</div>
-          <div className='placeholder'>Empfehlungen</div>
+          <div ref={empfehlungsRef}>
+            <Empfehlungen/>
+          </div>
           <div className='placeholder' ref={kontaktRef}>Kontakformular</div>
         </main>
       </Layout>
