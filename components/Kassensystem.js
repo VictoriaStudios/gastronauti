@@ -1,6 +1,7 @@
 import styles from '../styles/Kassensystem.module.css'
 import Button from './Button'
 import Image from 'next/image'
+import { scrollTo } from '../utilities/scrollTo'
 
 const Kassensystem = (props) => {
     return (
@@ -18,7 +19,7 @@ const Kassensystem = (props) => {
                 <div className={styles.kassenText}>
                     Modular, schnell und flexibel: Das gastronauti Kassensystem ist das Herz Ihres Betriebs und steuert genau das, was Sie möchten. Inklusive Cloud-Support & Küchenmonitor!
                     <div>
-                        <Button onClick={() => console.log("click")}>Zum Kassensystem</Button>
+                        <Button onClick={() => scrollTo(props.scrollRef)}>Jetzt Anfrage stellen</Button>
                     </div>
                 </div>
                 {/* Finish this button action once a page is done */}

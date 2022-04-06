@@ -30,10 +30,8 @@ export default function Home() {
             <Introduction scrollRef={kontaktRef} />
           </div>
           <div ref={kassenRef}>
-            <Kassensystem/>
+            <Kassensystem scrollRef={kontaktRef}/>
           </div>
-          <div className='placeholder'>Virtueller Stammtisch</div>
-          <div ref={gastroRef} className='placeholder'>Gastronomie-Konzepte</div>
           <div ref={blogRef} className='placeholder'>Blog</div>
           <div className='placeholder'>Empfehlungen</div>
           <div className='placeholder' ref={kontaktRef}>Kontakformular</div>

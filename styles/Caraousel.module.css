@@ -1,0 +1,12 @@
+.carouselWrapper {
+    position: relative;
+    width: 85vh;
+    margin:auto
+}
+
+.carouselBody {
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    width: 100%;
+}
