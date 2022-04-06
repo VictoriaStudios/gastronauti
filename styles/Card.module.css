@@ -26,6 +26,7 @@
     position: relative;
     color:var(--color-text);
     text-align: center;
+    text-overflow: ellipsis;
 }
 
 @media (max-width:1150px) {
