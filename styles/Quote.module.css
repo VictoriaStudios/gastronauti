@@ -1,0 +1,12 @@
+.quoteWrapper {
+    text-align: center;
+}
+
+.quote {
+    font-size: 1em;
+}
+
+.author{
+    font-size: .65em;
+    font-style: italic;
+}
