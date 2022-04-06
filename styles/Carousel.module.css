@@ -6,8 +6,10 @@
 
 .carouselBody {
     display: flex;
+    justify-content: center;
     position: relative;
     flex-wrap: nowrap;
     width: 100%;
-    margin: 5px;
+    margin:auto;
+
 }
