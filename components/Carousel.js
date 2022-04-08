@@ -9,15 +9,18 @@ const Carousel = (props) => {
 
 
   const handleNext = () => {
-    console.log ("click")
-    console.log (currElements.length)
-    console.log (allElements.length)
     if (currElements.length<1 || allElements.length < 1) return
-    console.log ("Here?")
     if (allElements.length > shownIndex+1) {
-      console.log ("clock")
       setCurrElements (allElements[shownIndex+1])
       setShownIndex(shownIndex+1)
+    }
+  }
+
+  const handlePrev = () => {
+    if (currElements.length<1 || allElements.length < 1) return
+    if (shownIndex > 0) {
+      setCurrElements (allElements[shownIndex-1])
+      setShownIndex(shownIndex-1)
     }
   }
 
@@ -43,12 +46,14 @@ const Carousel = (props) => {
   return (
     <section className={styles.carouselWrapper}>
       <div className={styles.carouselBody}>
-        <Image className={styles.carouselArrow}
+        <Image 
+          onClick={handlePrev}
+          className={styles.carouselArrow}
           src='/carousel_arrow.svg'
           width={50}
           height={50}
         />
-        {currElements && currElements.length > 1 ? (
+        {currElements && currElements.length > 0 ? (
           currElements.map((element) => (
             <>
               {element}
