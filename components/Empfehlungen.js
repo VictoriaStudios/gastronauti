@@ -14,6 +14,9 @@ const Empfehlungen = (props) => {
             <Card imgWidth={150} cardWidth={400} src='/icon-cogs.png'><Quote quote='Quote5' author='Markus Fiedermann, BigBusinessPartner.com'/> </Card>
             <Card imgWidth={150} cardWidth={400} src='/icon-cogs.png'><Quote quote='Quote 6' author='Markus Fiedermann, BigBusinessPartner.com'/> </Card>
             <Card imgWidth={150} cardWidth={400} src='/icon-cogs.png'><Quote quote='Quote 7' author='Markus Fiedermann, BigBusinessPartner.com'/> </Card>
+            <Card imgWidth={150} cardWidth={400} src='/icon-cogs.png'><Quote quote='Quote 8' author='Markus Fiedermann, BigBusinessPartner.com'/> </Card>
+            <Card imgWidth={150} cardWidth={400} src='/icon-cogs.png'><Quote quote='Quote 9' author='Markus Fiedermann, BigBusinessPartner.com'/> </Card>
+            <Card imgWidth={150} cardWidth={400} src='/icon-cogs.png'><Quote quote='Quote 10' author='Markus Fiedermann, BigBusinessPartner.com'/> </Card>
         </Carousel>
     </div>
   )
