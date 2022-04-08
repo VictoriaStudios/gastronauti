@@ -11,7 +11,6 @@ const Carousel = (props) => {
       let currIndex = -1
       let innerIndex = 0
       for (let i = 0; i < props.children.length; i++) {
-        console.log ("I is " + i)
         if (i%3 === 0) {
           currIndex++
           innerIndex = 0
