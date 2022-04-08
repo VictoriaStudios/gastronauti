@@ -4,11 +4,26 @@ import Image from 'next/image'
 
 const Carousel = (props) => {
   const [currElements, setCurrElements] = useState([])
+  const [shownIndex, setShownIndex] = useState (0)
+  let preppedArray = []
+
+
+  const handleNext = () => {
+    console.log ("click")
+    console.log (currElements.length)
+    console.log (preppedArray.length)
+    if (currElements.length<1 || preppedArray.length < 1) return
+    console.log ("Here?")
+    if (preppedArray.length > shownIndex+1) {
+      console.log ("clock")
+      setShownIndex(shownIndex+1)
+      setCurrElements (preppedArray[shownIndex])
+    }
+  }
 
   useEffect(() => {
     if (props.children) {
       //create a two dimensional array, where the first dimension is the index of the three elements to be shown
-      let preppedArray = []
       let currIndex = -1
       for (let i = 0; i < props.children.length; i++) {
         if (i % 3 === 0) {
@@ -16,7 +31,7 @@ const Carousel = (props) => {
           preppedArray.push(props.children.slice(i, i + 3))
         }
       }
-      setCurrElements(preppedArray[0])
+      setCurrElements(preppedArray[shownIndex])
     }
 
 
@@ -38,7 +53,10 @@ const Carousel = (props) => {
             </>
           ))
         ) : ''}
-        <Image style={{ transform: 'rotateY(180deg)' }}
+        <Image
+          onClick={handleNext} 
+          className={styles.carouselArrow}
+          style={{ transform: 'rotateY(180deg)' }}
           src='/carousel_arrow.svg'
           width={50}
           height={50}

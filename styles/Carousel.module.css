@@ -15,10 +15,8 @@
 
 .carouselArrow {
     transition: 0.3s;
-    stroke:red;
 }
 
 .carouselArrow:hover{
     cursor: pointer;
-    stroke:aqua;
 }
