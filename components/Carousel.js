@@ -2,6 +2,7 @@ import styles from '../styles/Carousel.module.css'
 import { useEffect, useState } from 'react'
 
 const Carousel = (props) => {
+  const [currElements, setCurrElements] = useState([])
 
   useEffect(() => {
     if (props.children) {
@@ -10,28 +11,33 @@ const Carousel = (props) => {
       let preppedArray = []
       let currIndex = -1
       for (let i = 0; i < props.children.length; i++) {
-        if (i%3 === 0) {
+        if (i % 3 === 0) {
           currIndex++
-          preppedArray.push (props.children.slice(i,i+3))
-        } 
+          preppedArray.push(props.children.slice(i, i + 3))
+        }
       }
-      console.table (preppedArray)
+      setCurrElements(preppedArray[0])
     }
 
-  
+
   }, [props.children])
-  
+
 
   return (
     <section className={styles.carouselWrapper}>
-        <div className={styles.carouselBody}>
-            {/* {props.children} */}
-            {props.children.map((element) => (
-              <>
+      <div className={styles.carouselBody}>
+        {currElements && currElements.length > 1 ? (
+          currElements.map((element) => (
+            <>
               {element}
-              </>
-            ))}
-        </div>
+            </>
+          ))
+        ) : ''}
+
+
+
+
+      </div>
     </section>
   )
 }
