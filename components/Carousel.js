@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 const Carousel = (props) => {
-  const [currElements, setCurrElements] = useState([])
   const [allElements, setAllElements] = useState ([])
+  const [currElements, setCurrElements] = useState([])
   const [shownIndex, setShownIndex] = useState (0)
 
 
