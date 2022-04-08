@@ -9,22 +9,13 @@ const Carousel = (props) => {
       //create a two dimensional array, where the first dimension is the index of the three elements to be shown
       let preppedArray = []
       let currIndex = -1
-      let innerIndex = 0
       for (let i = 0; i < props.children.length; i++) {
         if (i%3 === 0) {
           currIndex++
-          innerIndex = 0
-          preppedArray.push ([currIndex,"dummy"])
-          let currElement = props.children[i]
-          preppedArray[currIndex][innerIndex] = currElement
-        } else{
-          innerIndex++
-          preppedArray[currIndex][innerIndex] = props.children[i]
-        }
+          preppedArray.push (props.children.slice(i,i+3))
+        } 
       }
-      console.log (preppedArray)
-
-
+      console.table (preppedArray)
     }
 
   
