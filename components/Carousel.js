@@ -1,26 +1,34 @@
 import styles from '../styles/Carousel.module.css'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Transition from 'react-transition-group/cjs/Transition'
+import Button from './Button'
 
 const Carousel = (props) => {
-  const [allElements, setAllElements] = useState ([])
+  const [allElements, setAllElements] = useState([])
   const [currElements, setCurrElements] = useState([])
-  const [shownIndex, setShownIndex] = useState (0)
-
+  const [shownIndex, setShownIndex] = useState(0)
+  const [showElements, setShowElements] = useState(true)
+  const [showTest, setShowTest] = useState(false)
+  const transTime = 300
 
   const handleNext = () => {
-    if (currElements.length<1 || allElements.length < 1) return
-    if (allElements.length > shownIndex+1) {
-      setCurrElements (allElements[shownIndex+1])
-      setShownIndex(shownIndex+1)
+    if (currElements.length < 1 || allElements.length < 1) return
+    if (allElements.length > shownIndex + 1) {
+      setShowElements(false)
+      setTimeout(() => {
+        setCurrElements(allElements[shownIndex + 1])
+        setShownIndex(shownIndex + 1)
+        setShowElements(true)
+      }, 300)
     }
   }
 
   const handlePrev = () => {
-    if (currElements.length<1 || allElements.length < 1) return
+    if (currElements.length < 1 || allElements.length < 1) return
     if (shownIndex > 0) {
-      setCurrElements (allElements[shownIndex-1])
-      setShownIndex(shownIndex-1)
+      setCurrElements(allElements[shownIndex - 1])
+      setShownIndex(shownIndex - 1)
     }
   }
 
@@ -36,32 +44,47 @@ const Carousel = (props) => {
         }
       }
       setCurrElements(preppedArray[shownIndex])
-      setAllElements (preppedArray)
+      setAllElements(preppedArray)
     }
 
 
   }, [props.children])
 
 
+
   return (
     <section className={styles.carouselWrapper}>
+      <Button onClick={() => setShowTest(!showTest)}>Toggle</Button>
       <div className={styles.carouselBody}>
-        <Image 
+        <Image
           onClick={handlePrev}
           className={styles.carouselArrow}
           src='/carousel_arrow.svg'
           width={50}
           height={50}
         />
-        {currElements && currElements.length > 0 ? (
-          currElements.map((element) => (
+        <Transition in={showElements} timeout={300}>
+          {state => (
             <>
-              {element}
+              <p>{state}</p>
+              {currElements && currElements.length > 0 ? (
+                currElements.map((element) => (
+                  <div style={{
+                    transition: 'opacity 0.3s ease-in',
+                    opacity: state === 'entering' ? 0.5
+                      : state === 'entered' ? 1
+                        : state === 'exiting' ? 0
+                          : state === 'exited' ? 0 : null
+                  }}>
+                    {element}
+                  </div>
+                ))
+              ) : ''}
             </>
-          ))
-        ) : ''}
+          )}
+        </Transition>
         <Image
-          onClick={handleNext} 
+          onClick={handleNext}
           className={styles.carouselArrow}
           style={{ transform: 'rotateY(180deg)' }}
           src='/carousel_arrow.svg'
