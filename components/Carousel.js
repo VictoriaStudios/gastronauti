@@ -20,15 +20,19 @@ const Carousel = (props) => {
         setCurrElements(allElements[shownIndex + 1])
         setShownIndex(shownIndex + 1)
         setShowElements(true)
-      }, 300)
+      }, transTime)
     }
   }
 
   const handlePrev = () => {
     if (currElements.length < 1 || allElements.length < 1) return
     if (shownIndex > 0) {
-      setCurrElements(allElements[shownIndex - 1])
-      setShownIndex(shownIndex - 1)
+      setShowElements(false)
+      setTimeout(() => {
+        setCurrElements(allElements[shownIndex - 1])
+        setShownIndex(shownIndex - 1)
+        setShowElements(true)
+      }, transTime)
     }
   }
 
@@ -63,18 +67,14 @@ const Carousel = (props) => {
           width={50}
           height={50}
         />
-        <Transition in={showElements} timeout={300}>
+        <Transition in={showElements} timeout={transTime}>
           {state => (
             <>
-              <p>{state}</p>
               {currElements && currElements.length > 0 ? (
                 currElements.map((element) => (
                   <div style={{
-                    transition: 'opacity 0.3s ease-in',
-                    opacity: state === 'entering' ? 0.5
-                      : state === 'entered' ? 1
-                        : state === 'exiting' ? 0
-                          : state === 'exited' ? 0 : null
+                    transition: `all ${transTime}ms ease-in`,
+                    opacity: state === 'entered' ? 1 : 0 
                   }}>
                     {element}
                   </div>
