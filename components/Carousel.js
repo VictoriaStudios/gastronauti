@@ -9,7 +9,6 @@ const Carousel = (props) => {
   const [currElements, setCurrElements] = useState([])
   const [shownIndex, setShownIndex] = useState(0)
   const [showElements, setShowElements] = useState(true)
-  const [showTest, setShowTest] = useState(false)
   const transTime = 300
 
   const handleNext = () => {
@@ -58,7 +57,6 @@ const Carousel = (props) => {
 
   return (
     <section className={styles.carouselWrapper}>
-      <Button onClick={() => setShowTest(!showTest)}>Toggle</Button>
       <div className={styles.carouselBody}>
         <Image
           onClick={handlePrev}
