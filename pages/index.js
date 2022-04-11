@@ -7,6 +7,7 @@ import { useRef } from 'react'
 import Introduction from '../components/Introduction'
 import Kassensystem from '../components/Kassensystem'
 import Empfehlungen from '../components/Empfehlungen'
+import ContactForm from '../components/ContactForm'
 
 export default function Home() {
   const introRef = useRef()
@@ -38,7 +39,9 @@ export default function Home() {
           <div ref={empfehlungsRef}>
             <Empfehlungen/>
           </div>
-          <div className='placeholder' ref={kontaktRef}>Kontakformular</div>
+          <div  ref={kontaktRef}>
+            <ContactForm/>
+          </div>
         </main>
       </Layout>
     </div>
