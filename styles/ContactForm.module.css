@@ -1,0 +1,9 @@
+.formWrapper {
+    display: flex;
+    width:85vw;
+    margin:auto;
+}
+
+.formLine {
+    width:100%;
+}
