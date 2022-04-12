@@ -2,8 +2,10 @@
     display: flex;
     width:85vw;
     margin:auto;
+    flex-wrap: wrap;
 }
 
 .formLine {
     width:100%;
+    display: flex;
 }

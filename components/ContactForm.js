@@ -39,8 +39,12 @@ const ContactForm = () => {
     <>
       <h1>Kontakt</h1>
       <form className={styles.formWrapper}>
-        <input className={styles.formLine} type='text' name='company' placeholder={formContent.company} onChange={handleCompany} />
-        <input className={styles.formLine} type='text' name='familyName' placeholder={formContent.familyName} onChange={handleFamilyName}/>
+        <div className={styles.formLine}>
+          <p style={{margin:0, paddin:0}}>Company: </p>
+          <div style={{flexGrow:1}}/>
+          <input style={{flexGrow:3}}type='text' name='company' placeholder={formContent.company} onChange={handleCompany} />
+        </div>
+        <input className={styles.formLine} type='text' name='familyName' placeholder={formContent.familyName} onChange={handleFamilyName} />
         <input className={styles.formLine} type='text' name='firstName' placeholder={formContent.firstName} onChange={handleFirstname} />
         <input className={styles.formLine} type='text' name='email' placeholder={formContent.email} onChange={handleEmail} />
         <input className={styles.formLine} type='text' name='message' placeholder='Your Message' onChange={handleMessage} />
