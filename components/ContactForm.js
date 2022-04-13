@@ -49,8 +49,8 @@ const ContactForm = () => {
         <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='company' placeholder={formContent.company} onChange={handleCompany} />
         <p className={`${styles.formItem} ${styles.formCaption}`}>Family Name: </p>
         <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='familyName' placeholder={formContent.familyName} onChange={handleFamilyName} />
-        <p className={`${styles.formItem} ${styles.formCaptionBack}`}>First Name: </p>
-        <input className={`${styles.formItem} ${styles.formSecondField}`} type='text' name='firstName' placeholder={formContent.firstName} onChange={handleFirstname} />
+        <p className={`${styles.formItem} ${styles.formCaption}`}>First Name: </p>
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='firstName' placeholder={formContent.firstName} onChange={handleFirstname} />
         <p className={`${styles.formItem} ${styles.formCaption}`}>Email: </p>
         <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='email' placeholder={formContent.email} onChange={handleEmail} />
         <p className={`${styles.formItem} ${styles.formCaption}`}>Your Message: </p>
