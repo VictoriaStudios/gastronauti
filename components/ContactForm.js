@@ -11,9 +11,9 @@ const ContactForm = (props) => {
     message: ''
   })
 
-  function auto_height(elem) { 
+  function auto_height(elem) {
     elem.style.height = "1px";
-    elem.style.height = (elem.scrollHeight)+"px";
+    elem.style.height = (elem.scrollHeight) + "px";
   }
 
 
@@ -44,7 +44,7 @@ const ContactForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (props.callback) {
-      callback (formContent)
+      callback(formContent)
     }
   }
 
@@ -53,17 +53,17 @@ const ContactForm = (props) => {
       <h1>Kontakt</h1>
       <form onSubmit={handleSubmit} className={styles.formWrapper}>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Company: </p>
-        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='company' value={formContent.company} placeholder='Company' onChange={handleCompany} required/>
+        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='company' value={formContent.company} placeholder='Company' onChange={handleCompany} required />
         <p className={`${styles.formItem} ${styles.formCaption}`}>Family Name: </p>
-        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='familyName' value={formContent.familyName} placeholder='Family Name' onChange={handleFamilyName} required/>
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='familyName' value={formContent.familyName} placeholder='Family Name' onChange={handleFamilyName} required />
         <p className={`${styles.formItem} ${styles.formCaption}`}>First Name: </p>
-        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='firstName' value={formContent.firstName} placeholder='First Name' onChange={handleFirstname} required/>
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='firstName' value={formContent.firstName} placeholder='First Name' onChange={handleFirstname} required />
         <p className={`${styles.formItem} ${styles.formCaption}`}>Email: </p>
-        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='email' value={formContent.email} placeholder='Email' onChange={handleEmail} required/>
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='email' value={formContent.email} placeholder='Email' onChange={handleEmail} required />
         <p className={`${styles.formItem} ${styles.formCaption}`}>Your Message: </p>
-        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='message' value={formContent.message} placeholder='Your Message' onChange={handleMessage} required/>
+        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='message' value={formContent.message} placeholder='Your Message' onChange={handleMessage} required />
         <div className={`${styles.formItem} ${styles.formFirstField}`}>
-        <Button type='submit'>Send message</Button>
+          <Button type='submit'>Send message</Button>
         </div>
       </form>
     </>
