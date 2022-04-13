@@ -69,8 +69,8 @@ const Carousel = (props) => {
           {state => (
             <>
               {currElements && currElements.length > 0 ? (
-                currElements.map((element) => (
-                  <div style={{
+                currElements.map((element, index) => (
+                  <div key={`card${index}`} style={{
                     transition: `all ${transTime}ms ease-in`,
                     opacity: state === 'entered' ? 1 : 0 
                   }}>

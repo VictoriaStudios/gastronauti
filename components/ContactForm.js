@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 import styles from '../styles/ContactForm.module.css'
-
+import Button from './Button'
 
 const ContactForm = () => {
   const [formContent, setFormContent] = useState({
     company: 'Company',
     familyName: 'Family Name',
     firstName: 'First Name',
-    email: 'email',
+    email: 'Email',
     message: ''
   })
 
@@ -41,20 +41,28 @@ const ContactForm = () => {
     setFormContent(newFormContent)
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log ("Submit")
+  }
+
   return (
     <>
       <h1>Kontakt</h1>
       <form className={styles.formWrapper}>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Company: </p>
-        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='company' placeholder={formContent.company} onChange={handleCompany} />
+        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='company' placeholder={formContent.company} onChange={handleCompany} required/>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Family Name: </p>
-        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='familyName' placeholder={formContent.familyName} onChange={handleFamilyName} />
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='familyName' placeholder={formContent.familyName} onChange={handleFamilyName} required/>
         <p className={`${styles.formItem} ${styles.formCaption}`}>First Name: </p>
-        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='firstName' placeholder={formContent.firstName} onChange={handleFirstname} />
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='firstName' placeholder={formContent.firstName} onChange={handleFirstname} required/>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Email: </p>
-        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='email' placeholder={formContent.email} onChange={handleEmail} />
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='email' placeholder={formContent.email} onChange={handleEmail} required/>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Your Message: </p>
-        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='message' placeholder='Your Message' onChange={handleMessage} />
+        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='message' placeholder='Your Message' onChange={handleMessage} required/>
+        <div className={`${styles.formItem} ${styles.formFirstField}`}>
+        <Button type='submit' onClick={handleSubmit}>Send message</Button>
+        </div>
       </form>
     </>
   )
