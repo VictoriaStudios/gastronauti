@@ -61,7 +61,7 @@ const ContactForm = (props) => {
         <p className={`${styles.formItem} ${styles.formCaption}`}>Email: </p>
         <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='email' value={formContent.email} placeholder='Email' onChange={handleEmail} required />
         <p className={`${styles.formItem} ${styles.formCaption}`}>Your Message: </p>
-        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='message' value={formContent.message} placeholder='Your Message' onChange={handleMessage} required />
+        <textarea style={{resize:'none'}} className={`${styles.formItem} ${styles.formLargeField}`} name='message'rows='13' value={formContent.message} placeholder='Your Message' onChange={handleMessage} required />
         <div className={`${styles.formItem} ${styles.formFirstField}`}>
           <Button type='submit'>Send message</Button>
         </div>
