@@ -3,10 +3,15 @@ import styles from '../styles/Card.module.css'
 import { scrollTo } from '../utilities/scrollTo'
 
 export const Card = (props) => {
+    let cardBodyStyle = {}
+    if (props.noHover && props.noHover === true) cardBodyStyle = {
+        pointerEvents:'none'
+    }
+
     return (
         <section onClick={() => scrollTo(props.scrollRef || '')}>
             <div className={styles.cardWrapper} style={{ maxWidth: props.cardWidth || '' }}>
-                <div className={styles.cardBody}>
+                <div style={cardBodyStyle} className={styles.cardBody}>
                     <div className={styles.cardImage}>
                         {props.src ? <Image
                             src={props.src}
