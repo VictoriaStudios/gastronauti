@@ -18,6 +18,7 @@ const Hero = (props) => {
         src='/hero_bg.jpg'
         layout='fill'
         objectFit='cover'
+        priority='true'
       />
       <div className={styles.heroCard}>
         <h1 className={styles.heroTitle}>Umsatz erhöhen.</h1>
