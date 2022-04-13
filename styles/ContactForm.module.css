@@ -4,6 +4,11 @@
     gap: 2rem;
     width:70vw;
     margin:auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-style:ridge;
+    border-color: var(--color-primary);
+    padding:2rem;
 }
 
 .formItem{
