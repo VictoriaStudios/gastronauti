@@ -1,15 +1,21 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styles from '../styles/ContactForm.module.css'
 
 
 const ContactForm = () => {
   const [formContent, setFormContent] = useState({
-    company: 'Firma',
+    company: 'Company',
     familyName: 'Family Name',
     firstName: 'First Name',
     email: 'email',
     message: ''
   })
+
+  function auto_height(elem) { 
+    elem.style.height = "1px";
+    elem.style.height = (elem.scrollHeight)+"px";
+  }
+
 
   const handleCompany = (e) => {
     let newFormContent = { ...formContent, company: e.target.value }
@@ -39,15 +45,16 @@ const ContactForm = () => {
     <>
       <h1>Kontakt</h1>
       <form className={styles.formWrapper}>
-        <div className={styles.formLine}>
-          <p style={{margin:0, paddin:0}}>Company: </p>
-          <div style={{flexGrow:1}}/>
-          <input style={{flexGrow:3}}type='text' name='company' placeholder={formContent.company} onChange={handleCompany} />
-        </div>
-        <input className={styles.formLine} type='text' name='familyName' placeholder={formContent.familyName} onChange={handleFamilyName} />
-        <input className={styles.formLine} type='text' name='firstName' placeholder={formContent.firstName} onChange={handleFirstname} />
-        <input className={styles.formLine} type='text' name='email' placeholder={formContent.email} onChange={handleEmail} />
-        <input className={styles.formLine} type='text' name='message' placeholder='Your Message' onChange={handleMessage} />
+        <p className={`${styles.formItem} ${styles.formCaption}`}>Company: </p>
+        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='company' placeholder={formContent.company} onChange={handleCompany} />
+        <p className={`${styles.formItem} ${styles.formCaption}`}>Family Name: </p>
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='familyName' placeholder={formContent.familyName} onChange={handleFamilyName} />
+        <p className={`${styles.formItem} ${styles.formCaptionBack}`}>First Name: </p>
+        <input className={`${styles.formItem} ${styles.formSecondField}`} type='text' name='firstName' placeholder={formContent.firstName} onChange={handleFirstname} />
+        <p className={`${styles.formItem} ${styles.formCaption}`}>Email: </p>
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='email' placeholder={formContent.email} onChange={handleEmail} />
+        <p className={`${styles.formItem} ${styles.formCaption}`}>Your Message: </p>
+        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='message' placeholder='Your Message' onChange={handleMessage} />
       </form>
     </>
   )

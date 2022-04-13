@@ -1,11 +1,40 @@
 .formWrapper {
-    display: flex;
-    width:85vw;
+    display: grid;
+    grid-template-columns: 2fr .5fr 4fr 2fr 4fr;
+    gap: 2rem;
+    width:70vw;
     margin:auto;
-    flex-wrap: wrap;
 }
 
-.formLine {
-    width:100%;
-    display: flex;
+.formItem{
+    margin:0;
+    padding: 0;
 }
+
+.formCaption {
+    text-align: right;
+    grid-column: 1 /span 1;
+}
+
+.formCaptionBack {
+    text-align: right;
+    grid-column: 4 /span 1;
+}
+
+
+.formLargeField {
+    grid-column: 3/span 2
+}
+
+.formFirstField {
+    grid-column: 3/span 1;
+}
+
+.formSecondField {
+    grid-column: 5/span 1;
+}
+
+.formMessage {
+    grid-column: 3/span 3;
+}
+
