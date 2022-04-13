@@ -2,12 +2,12 @@ import { useState, useEffect } from "react"
 import styles from '../styles/ContactForm.module.css'
 import Button from './Button'
 
-const ContactForm = () => {
+const ContactForm = (props) => {
   const [formContent, setFormContent] = useState({
-    company: 'Company',
-    familyName: 'Family Name',
-    firstName: 'First Name',
-    email: 'Email',
+    company: '',
+    familyName: '',
+    firstName: '',
+    email: '',
     message: ''
   })
 
@@ -43,25 +43,27 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log ("Submit")
+    if (props.callback) {
+      callback (formContent)
+    }
   }
 
   return (
     <>
       <h1>Kontakt</h1>
-      <form className={styles.formWrapper}>
+      <form onSubmit={handleSubmit} className={styles.formWrapper}>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Company: </p>
-        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='company' placeholder={formContent.company} onChange={handleCompany} required/>
+        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='company' value={formContent.company} placeholder='Company' onChange={handleCompany} required/>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Family Name: </p>
-        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='familyName' placeholder={formContent.familyName} onChange={handleFamilyName} required/>
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='familyName' value={formContent.familyName} placeholder='Family Name' onChange={handleFamilyName} required/>
         <p className={`${styles.formItem} ${styles.formCaption}`}>First Name: </p>
-        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='firstName' placeholder={formContent.firstName} onChange={handleFirstname} required/>
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='firstName' value={formContent.firstName} placeholder='First Name' onChange={handleFirstname} required/>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Email: </p>
-        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='email' placeholder={formContent.email} onChange={handleEmail} required/>
+        <input className={`${styles.formItem} ${styles.formFirstField}`} type='text' name='email' value={formContent.email} placeholder='Email' onChange={handleEmail} required/>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Your Message: </p>
-        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='message' placeholder='Your Message' onChange={handleMessage} required/>
+        <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='message' value={formContent.message} placeholder='Your Message' onChange={handleMessage} required/>
         <div className={`${styles.formItem} ${styles.formFirstField}`}>
-        <Button type='submit' onClick={handleSubmit}>Send message</Button>
+        <Button type='submit'>Send message</Button>
         </div>
       </form>
     </>
