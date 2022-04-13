@@ -1,6 +1,6 @@
 .formWrapper {
     display: grid;
-    grid-template-columns: 2fr .5fr 4fr 2fr 4fr;
+    grid-template-columns: 2fr .5fr 4fr 1fr 1fr 4fr;
     gap: 2rem;
     width:70vw;
     margin:auto;
@@ -18,7 +18,7 @@
 
 .formCaptionBack {
     text-align: right;
-    grid-column: 4 /span 1;
+    grid-column: 5 /span 1;
 }
 
 
@@ -31,7 +31,7 @@
 }
 
 .formSecondField {
-    grid-column: 5/span 1;
+    grid-column: 6/span 1;
 }
 
 .formMessage {
