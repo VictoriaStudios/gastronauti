@@ -50,7 +50,7 @@ const ContactForm = (props) => {
 
   return (
     <>
-      <h1>Kontakt</h1>
+      <h1>Contact Us</h1>
       <form onSubmit={handleSubmit} className={styles.formWrapper}>
         <p className={`${styles.formItem} ${styles.formCaption}`}>Company: </p>
         <input className={`${styles.formItem} ${styles.formLargeField}`} type='text' name='company' value={formContent.company} placeholder='Company' onChange={handleCompany} required />

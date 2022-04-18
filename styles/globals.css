@@ -30,10 +30,12 @@ a {
 
 h1 {
   font-size:2rem;
+  margin:.75rem;
 }
 
 h2{
   font-size:1.5rem;
+  margin:.5rem;
 }
 
 .nav-wrapper {
