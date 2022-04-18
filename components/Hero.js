@@ -21,12 +21,12 @@ const Hero = (props) => {
         priority='true'
       />
       <div className={styles.heroCard}>
-        <h1 className={styles.heroTitle}>Umsatz erhöhen.</h1>
-        <h1 className={styles.heroTitle}>Prozesse automatisieren.</h1>
-        <h1 className={styles.heroTitle}>Kosten optimieren.</h1>
+        <h1 className={styles.heroTitle}>Increase Revenue.</h1>
+        <h1 className={styles.heroTitle}>Automate Processes.</h1>
+        <h1 className={styles.heroTitle}>Optimise Costs.</h1>
         <div className={styles.heroTitle} style={{marginBlockStart:"1.33em", marginBlockEnd:"1.33em"}}>
-          <h1 className={styles.heroLineTitle} style={{ display: "inline" }}>Alles aus einer </h1>
-          <h1 className={`${styles.heroLineTitle} ${styles.heroHighlight}`} onClick={() => handleScroll(props.scrollRef)} style={{ display: "inline" }}>Hand</h1>
+          <h1 className={styles.heroLineTitle} style={{ display: "inline" }}>The All-In-One </h1>
+          <h1 className={`${styles.heroLineTitle} ${styles.heroHighlight}`} onClick={() => handleScroll(props.scrollRef)} style={{ display: "inline" }}>Solution</h1>
         </div>
       </div>
     </div>
