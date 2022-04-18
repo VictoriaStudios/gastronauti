@@ -6,8 +6,8 @@ import { scrollTo } from '../utilities/scrollTo'
 const Introduction = (props) => {
     return (
         <section className={styles.introWrapper}>
-            <h1 className={styles.introTitle}>Die intelligente All-In-One-Lösung</h1>
-            <h2 className={styles.introTitle}>Speziell auf die Bedürfnisse der Gastronomie & Hotellerie zugeschnitten</h2>
+            <h1 className={styles.introTitle}>The All-In-One-Solution</h1>
+            <h2 className={styles.introTitle}>Tailored for Restaurants and Hotels</h2>
             <div className={styles.introContent}>
                 <div className={styles.introVideo}>
                     <Image
@@ -17,9 +17,9 @@ const Introduction = (props) => {
                     />
                 </div>
                 <div className={styles.introText}>
-                    <h3>Sie möchten die Abläufe in Ihrem Betrieb effizienter gestalten? Prozesse automatisieren? Ihren Wareneinsatz senken? Ihren Umsatz steigern? Personalkosten optimieren? Die Gästezufriedenheit steigern? Und möchten am Ende mehr Zeit für Ihre Gäste haben?</h3>
-                    <h3>Dann ist gastronauti genau der richtige Partner an Ihrer Seite!</h3>
-                    <Button onClick={() => scrollTo(props.scrollRef)}>Gastronauti kennenlernen</Button>
+                    <h3>Do you want to handle processes more efficiently in your business? Do you want to automate processes and increase your revenue? How about optimizing your personnel cost and making your patrons happy? Do you want to free up more time to care for your guests?</h3>
+                    <h3>Gastronauti has you covered!</h3>
+                    <Button onClick={() => scrollTo(props.scrollRef)}>Get to know us now</Button>
                 </div>
             </div>
         </section>

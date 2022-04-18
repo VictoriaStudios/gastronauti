@@ -6,8 +6,8 @@ import { scrollTo } from '../utilities/scrollTo'
 const Kassensystem = (props) => {
     return (
         <section className={styles.kassenWrapper}>
-            <h1 className={styles.kassenTitle}>gastronauti Kassensystem</h1>
-            <h2 className={styles.kassenTitle}> Vielseitig & Erweiterbar </h2>
+            <h1 className={styles.kassenTitle}>Gastronauti Checkout</h1>
+            <h2 className={styles.kassenTitle}> Versatile & Expandable </h2>
             <div className={styles.kassenContent}>
                 <div className={styles.kassenImage}>
                     <Image
@@ -17,9 +17,9 @@ const Kassensystem = (props) => {
                     />
                 </div>
                 <div className={styles.kassenText}>
-                    Modular, schnell und flexibel: Das gastronauti Kassensystem ist das Herz Ihres Betriebs und steuert genau das, was Sie möchten. Inklusive Cloud-Support & Küchenmonitor!
+                    Modular and flexible: The Gastronauti checkout system is at the heart of your business! It organizes guest orders, stock, relays orders to the kitchen, books room and much, much more.
                     <div>
-                        <Button onClick={() => scrollTo(props.scrollRef)}>Jetzt Anfrage stellen</Button>
+                        <Button onClick={() => scrollTo(props.scrollRef)}>contact us now!</Button>
                     </div>
                 </div>
                 {/* Finish this button action once a page is done */}
