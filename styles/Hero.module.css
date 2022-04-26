@@ -45,6 +45,11 @@
     color:var(--color-text);
 }
 
+.heroLineTitle {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 
 
 
