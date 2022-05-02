@@ -11,15 +11,17 @@ const Kassensystem = (props) => {
             <div className={styles.kassenContent}>
                 <div className={styles.kassenImage}>
                     <Image
-                        src='/video-placeholder.png'
+                        src='/checkout.png'
                         layout='fill'
                         objectFit='contain'
                     />
                 </div>
                 <div className={styles.kassenText}>
-                    Modular and flexible: The Gastronauti checkout system is at the heart of your business! It organizes guest orders, stock, relays orders to the kitchen, books room and much, much more.
+                    <h3>
+                        Modular and flexible: The Gastronauti checkout system is at the heart of your business! It organizes guest orders, stock, relays orders to the kitchen, books room and much, much more.
+                    </h3>
                     <div>
-                        <Button onClick={() => scrollTo(props.scrollRef)}>contact us now!</Button>
+                        <Button onClick={() => scrollTo(props.scrollRef)}>Contact us now</Button>
                     </div>
                 </div>
                 {/* Finish this button action once a page is done */}

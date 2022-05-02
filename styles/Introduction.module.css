@@ -22,6 +22,9 @@
 }
 
 .introText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width:50%;
     color: var(--color-text);
 }

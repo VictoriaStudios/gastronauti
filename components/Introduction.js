@@ -19,7 +19,9 @@ const Introduction = (props) => {
                 <div className={styles.introText}>
                     <h3>Do you want to handle processes more efficiently in your business? Do you want to automate processes and increase your revenue? How about optimizing your personnel cost and making your patrons happy? Do you want to free up more time to care for your guests?</h3>
                     <h3>Gastronauti has you covered!</h3>
+                    <div>
                     <Button onClick={() => scrollTo(props.scrollRef)}>Get to know us now</Button>
+                    </div>
                 </div>
             </div>
         </section>
