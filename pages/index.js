@@ -8,6 +8,7 @@ import Introduction from '../components/Introduction'
 import Kassensystem from '../components/Kassensystem'
 import Empfehlungen from '../components/Empfehlungen'
 import ContactForm from '../components/ContactForm'
+import Blog from '../components/Blog'
 
 export default function Home() {
   const introRef = useRef()
@@ -35,7 +36,9 @@ export default function Home() {
           <div ref={kassenRef}>
             <Kassensystem scrollRef={kontaktRef}/>
           </div>
-          <div ref={blogRef} className='placeholder'>Blog</div>
+          <div ref={blogRef}>
+            <Blog/>
+          </div>
           <div ref={empfehlungsRef}>
             <Empfehlungen/>
           </div>
