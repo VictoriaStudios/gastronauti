@@ -2,7 +2,6 @@ import styles from '../styles/Carousel.module.css'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Transition from 'react-transition-group/cjs/Transition'
-import Button from './Button'
 
 const Carousel = (props) => {
   const [allElements, setAllElements] = useState([])
@@ -70,10 +69,11 @@ const Carousel = (props) => {
             <>
               {currElements && currElements.length > 0 ? (
                 currElements.map((element, index) => (
-                  <div key={`card${index}`} style={{
-                    transition: `all ${transTime}ms ease-in`,
-                    opacity: state === 'entered' ? 1 : 0 
-                  }}>
+                  <div key={`card${index}`}
+                    style={{
+                      transition: `all ${transTime}ms ease-in`,
+                      opacity: state === 'entered' ? 1 : 0
+                    }}>
                     {element}
                   </div>
                 ))
