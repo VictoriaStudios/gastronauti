@@ -20,6 +20,7 @@
     position: relative;
     width:50%;
     height:290px;
+    margin-right: 1rem;
 }
 
 .kassenText {
@@ -28,6 +29,7 @@
     justify-content: space-between;
     width:50%;
     color: var(--color-text);
+    margin-left: 1rem;
 }
 
 @media (max-width: 1200px) {
