@@ -31,13 +31,12 @@ const Blog = (props) => {
                             transition: `all ${expandtime}ms ease-in`,
                             height: state === 'entered' ? '65vh' : '0'
                             }}>
-                            {expanded ? (
                                 <h1 style={{
                                     transition: `all ${transTime}ms ease-in`,
                                     opacity: state === 'entered' ? 1 : 0
                                 }}>
                                     Content
-                                </h1>) : null}
+                                </h1>
                         </div>
                     </>
                 )}

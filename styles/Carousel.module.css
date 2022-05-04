@@ -1,6 +1,6 @@
 .carouselWrapper {
     position: relative;
-    width: 85vw;
+    width: 80vw;
     margin:auto;
 }
 
@@ -9,7 +9,7 @@
     justify-content: space-between;
     position: relative;
     flex-wrap: nowrap;
-    width: 80%;
+    width: 100%;
     margin:auto;
 }
 

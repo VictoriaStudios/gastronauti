@@ -1,6 +1,6 @@
 .kassenWrapper {
     position: relative;
-    width: 85vw;
+    width: 80vw;
     margin:auto;
     margin-bottom: 2rem;
 }
@@ -30,13 +30,13 @@
     color: var(--color-text);
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
     .kassenWrapper {
         width:75vw;
     }
 }
 
-@media (min-width: 1400px) {
+@media (max-width: 1400px) {
     .kassenWrapper {
         width:70vw;
     }
