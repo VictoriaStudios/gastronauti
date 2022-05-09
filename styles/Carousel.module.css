@@ -2,6 +2,7 @@
     position: relative;
     width: 80vw;
     margin:auto;
+    height: 100%;
 }
 
 .carouselBody {
@@ -11,6 +12,7 @@
     flex-wrap: nowrap;
     width: 100%;
     margin:auto;
+    height:100%;
 }
 
 .carouselArrow {

@@ -64,7 +64,7 @@ const Carousel = (props) => {
           width={50}
           height={50}
         />
-        <Transition in={showElements} timeout={transTime}>
+        <Transition in={showElements} timeout={transTime} style={{flexGrow:'1'}}>
           {state => (
             <>
               {currElements && currElements.length > 0 ? (

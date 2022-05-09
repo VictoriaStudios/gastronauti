@@ -2,13 +2,13 @@
     position: relative;
     margin:auto;
     margin-bottom: 2rem;
-    cursor: pointer;
 }
 
 
 .blogTitle {
     text-align: center;
     color: var(--color-headlines);
+    cursor: pointer;
 }
 
 .blogContent {
