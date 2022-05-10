@@ -34,8 +34,8 @@ const Blog = (props) => {
                         }}>
                             <div
                                 style={{
-                                    transition: `all ${transTime}ms ease-outt`,
-                                    opacity: state === 'entered' ? 1 : 0,
+                                    transition: `all ${transTime}ms ease-in`,
+                                    opacity: state === 'entering' ? '0.2' : state === 'entered' ? '1' : state === 'exiting' ? '0.2' : state === 'exited' ? '0' : null,
                                     height: '100%'
                                 }}>
                                 <Carousel>
