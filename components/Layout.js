@@ -5,7 +5,7 @@ const Layout = (props) => {
   return (
     <div>
         <header>
-            <Navbar/>
+            <Navbar kassenRef={props.KassenRef}/>
         </header>
         {props.children}
         <footer className='placeholder'>

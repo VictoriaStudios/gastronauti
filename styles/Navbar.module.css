@@ -15,4 +15,5 @@
 
 .navElement:hover {
   color: var(--color-primary);
+  cursor: pointer;
 }

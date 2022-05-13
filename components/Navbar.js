@@ -2,10 +2,12 @@ import Link from 'next/link'
 import React from 'react'
 import styles from '../styles/Navbar.module.css'
 import Image from 'next/image'
+import { scrollTo } from '../utilities/scrollTo'
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav>
+      {console.log (props)}
         <div className={styles.navWrapper}>
         <div style={{position:'relative',  top:'7px'}}>
         <Image
@@ -14,8 +16,7 @@ const Navbar = () => {
           height='30'
         />
         </div>
-        <Link href="/konzepte"><a className={styles.navElement}> Konzepte </a></Link>
-        <Link href="/module"><a className={styles.navElement}> Module </a></Link>
+        <a className={styles.navElement} onClick={()=> scrollTo(props.kassenRef)}> Module </a>
         <Link href="/hardware"><a className={styles.navElement}> Hardware </a></Link>
         <Link href="/netzwerk"><a className={styles.navElement}> Netzwerk </a></Link>
         <Link href="/schnittstellen"><a className={styles.navElement}> Schnittstellen </a></Link>
