@@ -13,7 +13,7 @@ const Navbar = (props, ref) => {
             height='30'
           />
         </div>
-        <a className={styles.navElement} onClick={() => scrollTo(ref.kassenRef)}> Module </a>
+        <a className={styles.navElement} onClick={() => scrollTo(ref.kassenRef)}> Modules </a>
         <a className={styles.navElement} onClick={() => scrollTo(ref.blogRef)}> Blog </a>
         <a className={styles.navElement} onClick={() => scrollTo(ref.empfehlungsRef)}> Recommendations </a>
         <a className={styles.navElement} onClick={() => scrollTo(ref.kontaktRef)}> Contact </a>
