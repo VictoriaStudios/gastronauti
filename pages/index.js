@@ -12,11 +12,21 @@ import Blog from '../components/Blog'
 
 export default function Home() {
   const introRef = useRef()
+  const heroRef = useRef()
   const kontaktRef = useRef()
   const kassenRef = useRef()
   const gastroRef = useRef()
   const blogRef = useRef()
   const empfehlungsRef = useRef()
+  const ref = {
+    kassenRef:kassenRef,
+    kontaktRef:kontaktRef,
+    gastroRef:gastroRef,
+    blogRef: blogRef,
+    empfehlungsRef:empfehlungsRef,
+    introRef:introRef,
+    heroRef:heroRef,
+  }
 
 
   return (
@@ -26,9 +36,9 @@ export default function Home() {
         <meta name="description" content="Gastronauti is the solution for hotels, restaurants, cafés and diners. We provide accounting, automatic ordering, tax declaration generation and much more." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout ref={kassenRef}>
+      <Layout ref={ref}>
         <main>
-          <Hero scrollRef={introRef} />
+          <Hero ref={heroRef} scrollRef={introRef} />
           <More kassenRef={kassenRef} gastroRef={gastroRef} blogRef={blogRef} />
           <div ref={introRef}>
             <Introduction scrollRef={kontaktRef} />
