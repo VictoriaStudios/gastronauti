@@ -17,6 +17,7 @@ export default function Home() {
   const kassenRef = useRef()
   const blogRef = useRef()
   const empfehlungsRef = useRef()
+  const topRef = useRef()
   const ref = {
     kassenRef: kassenRef,
     kontaktRef: kontaktRef,
@@ -24,18 +25,19 @@ export default function Home() {
     empfehlungsRef: empfehlungsRef,
     introRef: introRef,
     heroRef: heroRef,
+    topRef:topRef,
   }
 
 
   return (
-    <div>
+    <div ref={topRef}>
       <Head>
         <title>All-In-One Solution for your Gastronomy</title>
         <meta name="description" content="Gastronauti is the solution for hotels, restaurants, cafés and diners. We provide accounting, automatic ordering, tax declaration generation and much more." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout ref={ref}>
-        <main>
+        <main >
           <div ref={heroRef}>
             <Hero scrollRef={introRef} />
           </div>

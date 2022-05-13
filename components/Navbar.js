@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useRef } from 'react'
 import styles from '../styles/Navbar.module.css'
 import Image from 'next/image'
 import { scrollTo } from '../utilities/scrollTo'
@@ -6,7 +6,7 @@ import { scrollTo } from '../utilities/scrollTo'
 const Navbar = (props, ref) => {
   return (
       <nav className={styles.navWrapper}>
-        <div className={styles.navElement} onClick={() => scrollTo(ref.heroRef)} style={{ position: 'relative', top: '7px' }}>
+        <div className={styles.navElement} onClick={() => scrollTo(ref.topRef)} style={{ position: 'relative', top: '7px' }}>
           <Image
             src='/logo.png'
             width='30'

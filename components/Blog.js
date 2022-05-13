@@ -26,7 +26,11 @@ const Blog = (props) => {
             {state => (
                 <>
                     <section ref={blogRef} className={styles.blogWrapper}>
-                        <h1 onClick={handleBlogClick} className={styles.blogTitle}>Blog</h1>
+                        <h1 onClick={handleBlogClick} className={styles.blogTitle}>
+                            <p style={{display:'inline'}}>{">>> "}</p>
+                            Blog
+                            <p style={{display:'inline'}}>{"<<< "}</p>
+                            </h1>
                         <div className={styles.blogContent} style={{
                             transition: `all ${expandtime}ms linear`,
                             height: state === 'entering' ? '0' : state === 'entered' ? '75vh' : state === 'exiting' ? '0' : state === 'exited' ? '0' : null,
