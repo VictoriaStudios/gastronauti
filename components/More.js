@@ -8,7 +8,7 @@ const More = (props) => {
   return (
     <div className={styles.moreWrapper}>
         <Card scrollRef={props.kassenRef} width={width} src='/icon-cogs.png'> <h4>Modules</h4> </Card>
-        <Card scrollRef={props.gastroRef} width={width} src='/icon-newspaper.png'> <h4>Concepts</h4> </Card>
+        <Card scrollRef={props.kontaktRef} width={width} src='/icon-newspaper.png'> <h4>Contact Us</h4> </Card>
         <Card scrollRef={props.blogRef} width={width} src='/icon-restaurant.png'> <h4>Blog & Customer Voices</h4> </Card>
     </div>
   )

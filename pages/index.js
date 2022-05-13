@@ -15,17 +15,15 @@ export default function Home() {
   const heroRef = useRef()
   const kontaktRef = useRef()
   const kassenRef = useRef()
-  const gastroRef = useRef()
   const blogRef = useRef()
   const empfehlungsRef = useRef()
   const ref = {
-    kassenRef:kassenRef,
-    kontaktRef:kontaktRef,
-    gastroRef:gastroRef,
+    kassenRef: kassenRef,
+    kontaktRef: kontaktRef,
     blogRef: blogRef,
-    empfehlungsRef:empfehlungsRef,
-    introRef:introRef,
-    heroRef:heroRef,
+    empfehlungsRef: empfehlungsRef,
+    introRef: introRef,
+    heroRef: heroRef,
   }
 
 
@@ -38,22 +36,24 @@ export default function Home() {
       </Head>
       <Layout ref={ref}>
         <main>
-          <Hero ref={heroRef} scrollRef={introRef} />
-          <More kassenRef={kassenRef} gastroRef={gastroRef} blogRef={blogRef} />
+          <div ref={heroRef}>
+            <Hero scrollRef={introRef} />
+          </div>
+          <More kassenRef={kassenRef} kontaktRef={kontaktRef} blogRef={blogRef} />
           <div ref={introRef}>
             <Introduction scrollRef={kontaktRef} />
           </div>
           <div ref={kassenRef}>
-            <Kassensystem scrollRef={kontaktRef}/>
+            <Kassensystem scrollRef={kontaktRef} />
           </div>
           <div ref={blogRef}>
-            <Blog/>
+            <Blog />
           </div>
           <div ref={empfehlungsRef}>
-            <Empfehlungen/>
+            <Empfehlungen />
           </div>
-          <div  ref={kontaktRef}>
-            <ContactForm/>
+          <div ref={kontaktRef}>
+            <ContactForm />
           </div>
         </main>
       </Layout>
