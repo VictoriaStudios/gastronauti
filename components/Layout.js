@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 const Layout = (props, ref) => {
   return (
-    <div>
+    <>
         <header>
             <Navbar ref={ref}/>
         </header>
@@ -11,7 +11,7 @@ const Layout = (props, ref) => {
         <footer className='placeholder'>
           Footer
         </footer>
-    </div>
+    </>
   )
 }
 

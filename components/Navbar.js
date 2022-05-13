@@ -5,8 +5,7 @@ import { scrollTo } from '../utilities/scrollTo'
 
 const Navbar = (props, ref) => {
   return (
-    <nav>
-      <div className={styles.navWrapper}>
+      <nav className={styles.navWrapper}>
         <div className={styles.navElement} onClick={() => scrollTo(ref.heroRef)} style={{ position: 'relative', top: '7px' }}>
           <Image
             src='/logo.png'
@@ -18,8 +17,7 @@ const Navbar = (props, ref) => {
         <a className={styles.navElement} onClick={() => scrollTo(ref.blogRef)}> Blog </a>
         <a className={styles.navElement} onClick={() => scrollTo(ref.empfehlungsRef)}> Recommendations </a>
         <a className={styles.navElement} onClick={() => scrollTo(ref.kontaktRef)}> Contact </a>
-      </div>
-    </nav>
+      </nav>
   )
 }
 
