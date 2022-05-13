@@ -26,7 +26,7 @@ export default function Home() {
         <meta name="description" content="Gastronauti is the solution for hotels, restaurants, cafés and diners. We provide accounting, automatic ordering, tax declaration generation and much more." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout kassenRef={kassenRef}>
+      <Layout ref={kassenRef}>
         <main>
           <Hero scrollRef={introRef} />
           <More kassenRef={kassenRef} gastroRef={gastroRef} blogRef={blogRef} />

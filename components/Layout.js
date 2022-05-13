@@ -1,11 +1,11 @@
-import React from 'react'
+import {forwardRef} from 'react'
 import Navbar from './Navbar'
 
-const Layout = (props) => {
+const Layout = (props, ref) => {
   return (
     <div>
         <header>
-            <Navbar kassenRef={props.KassenRef}/>
+            <Navbar ref={ref}/>
         </header>
         {props.children}
         <footer className='placeholder'>
@@ -15,4 +15,4 @@ const Layout = (props) => {
   )
 }
 
-export default Layout
+export default forwardRef (Layout)
