@@ -13,20 +13,12 @@ const Layout = (props, ref) => {
   }
 
   const handleScroll = () => {
-    let shouldBeSticky = false
-    console.log (window.scrollY)
-    if (window.scrollY >= headerSize) {
-      console.log ("Should be sticky")
-      shouldBeSticky = true
+    if (window.scrollY >= headerSize && !navSticky) {
+      setNavSticky (true)
     }
-    else {
-      console.log ("Shouldn't be sticky")
-      shouldBeSticky = false
+    else if (window.scrollY < headerSize && navSticky) {
+      setNavSticky (false)
     }
-    console.log ("navsticky is " + navSticky)
-    if (shouldBeSticky && !navSticky) setNavSticky (true)
-    else if (!shouldBeSticky && navSticky) setNavSticky (false)
-
   }
 
   useEffect(() => {
@@ -35,13 +27,13 @@ const Layout = (props, ref) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     }
-  }, [])
+  }, [navSticky])
 
   return (
     <>
       <header ref={headerRef}>
-        <div className={styles.stickyDivOff} />
-        {!navSticky ? <Navbar ref={ref} /> : null}
+        {!navSticky ? <Navbar ref={ref} /> : <div style={{visibility:'hidden'}}><Navbar ref={ref} /></div>}
+        <div className={!navSticky ? styles.stickyDivOff : styles.stickyDivOn} ><Navbar ref={ref} /></div>
       </header>
       {props.children}
       <footer className='placeholder'>
