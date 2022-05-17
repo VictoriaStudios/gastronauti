@@ -1,4 +1,5 @@
 .stickyDivOff {
-    position: relative;
+    position: fixed;
+    top:0;
     height: 0;
 }
