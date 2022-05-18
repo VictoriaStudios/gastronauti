@@ -26,6 +26,7 @@ const Layout = (props, ref) => {
 
   useEffect(() => {
     headerSize = getHeaderSize()
+    handleScroll()
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
