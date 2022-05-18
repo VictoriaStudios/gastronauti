@@ -8,7 +8,7 @@ const Layout = (props, ref) => {
   const [navSticky, setNavSticky] = useState(false)
   let headerSize = 0
   const headerRef = useRef()
-  const transTime = 400
+  const transTime = 200
 
   const getHeaderSize = () => {
     if (!headerRef.current) return
@@ -16,10 +16,10 @@ const Layout = (props, ref) => {
   }
 
   const handleScroll = () => {
-    if (window.scrollY >= headerSize && !navSticky) {
+    if (window.scrollY >= headerSize*2 && !navSticky) {
       setNavSticky(true)
     }
-    else if (window.scrollY < headerSize && navSticky) {
+    else if (window.scrollY < headerSize*2 && navSticky) {
       setNavSticky(false)
     }
   }
@@ -38,11 +38,14 @@ const Layout = (props, ref) => {
         {!navSticky ? <Navbar ref={ref} /> : <div style={{ visibility: 'hidden' }}><Navbar ref={ref} /></div>}
         <Transition in={navSticky} timeout={transTime}>
           {state => (
+            <>
             <div style={{
-              transition: `${transTime}`,
-              opacity: state === 'entering' ? .75 : 'entered' ? .75 : 0
+              transition: `all ${transTime}ms ease-in-out`,
+              top: state === 'entering' ? 0 : state === 'entered' ? 0 : '-10%',
+              height: state === 'entering' ? `${headerSize}px` : state === 'entered' ? `${headerSize}px` : 0
             }} 
-            className={!navSticky ? styles.stickyDivOff : styles.stickyDivOn} ><Navbar ref={ref} /></div>
+            className={styles.sticky} ><Navbar ref={ref} /></div>
+            </>
           )}
         </Transition>
       </header>

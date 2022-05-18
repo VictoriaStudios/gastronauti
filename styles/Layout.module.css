@@ -1,11 +1,6 @@
-.stickyDivOff {
+.sticky {
     position: fixed;
-    top:0;
-    height: 0;
+    z-index: 20;
+    opacity:.8
 }
 
-.stickyDivOn {
-    position: fixed;
-    top:0;
-    z-index: 20;
-}
