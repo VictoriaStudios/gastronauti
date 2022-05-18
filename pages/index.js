@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import More from '../components/More'
-import styles from '../styles/Home.module.css'
 import { useRef } from 'react'
 import Introduction from '../components/Introduction'
 import Kassensystem from '../components/Kassensystem'
@@ -25,7 +24,7 @@ export default function Home() {
     empfehlungsRef: empfehlungsRef,
     introRef: introRef,
     heroRef: heroRef,
-    topRef:topRef,
+    topRef: topRef,
   }
 
 
@@ -46,15 +45,19 @@ export default function Home() {
             <Introduction scrollRef={kontaktRef} />
           </div>
           <div ref={kassenRef}>
+            <div style={{ marginBottom: '4rem' }} />
             <Kassensystem scrollRef={kontaktRef} />
           </div>
           <div ref={blogRef}>
-            <Blog />
+            <div style={{ marginBottom: '4rem' }} />
+            <Blog ref={blogRef} />
           </div>
           <div ref={empfehlungsRef}>
+            <div style={{ marginBottom: '4rem' }} />
             <Empfehlungen />
           </div>
           <div ref={kontaktRef}>
+            <div style={{ marginBottom: '4rem' }} />
             <ContactForm />
           </div>
         </main>

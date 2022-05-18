@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { forwardRef, useState, useRef } from 'react'
 import { scrollTo } from '../utilities/scrollTo'
 import styles from '../styles/Blog.module.css'
 import Transition from 'react-transition-group/cjs/Transition'
@@ -7,14 +7,14 @@ import Carousel from './Carousel'
 
 
 
-const Blog = (props) => {
+const Blog = (props, ref) => {
     const [expanded, setExpanded] = useState(false)
     const transTime = 550
     const expandtime = 300
     const blogRef = useRef()
 
     const handleBlogClick = () => {
-        if (!expanded) scrollTo(blogRef)
+        if (!expanded) scrollTo(ref)
         setExpanded(!expanded)
     }
 
@@ -69,4 +69,4 @@ const Blog = (props) => {
     )
 }
 
-export default Blog
+export default forwardRef(Blog)
