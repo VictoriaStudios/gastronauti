@@ -1,14 +1,18 @@
 .blogWrapper {
     position: relative;
+    display: block;
     margin:auto;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
 
 .blogTitle {
+    position: relative;
     text-align: center;
     color: var(--color-headlines);
     cursor: pointer;
+    border: 3px dashed var(--color-primary);
 }
 
 .blogContent {

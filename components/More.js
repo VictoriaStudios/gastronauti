@@ -2,9 +2,7 @@ import styles from '../styles/More.module.css'
 import { Card } from './Card'
 
 const More = (props) => {
-  const width="150"
-
-
+  const width = "150"
   return (
     <div className={styles.moreWrapper}>
         <Card scrollRef={props.kassenRef} width={width} src='/icon-cogs.png'> <h4>Modules</h4> </Card>
