@@ -42,6 +42,7 @@ export default function Home() {
           </div>
           <More kassenRef={kassenRef} kontaktRef={kontaktRef} blogRef={blogRef} />
           <div ref={introRef}>
+          <div style={{ marginBottom: '4rem' }} />
             <Introduction scrollRef={kontaktRef} />
           </div>
           <div ref={kassenRef}>
