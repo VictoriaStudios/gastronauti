@@ -5,7 +5,7 @@ import { scrollTo } from '../utilities/scrollTo'
 export const Card = (props) => {
     let cardBodyStyle = {}
     if (props.noHover && props.noHover === true) cardBodyStyle = {
-        pointerEvents:'none'
+        pointerEvents: 'none'
     }
 
     return (

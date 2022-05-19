@@ -8,11 +8,23 @@
 
 
 .blogTitle {
+    transition: 0.3s;
     position: relative;
+    background-color: var(--color-primary);
     text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    display: inline-block;
+    left:50%;
+    transform: translateX(-50%);
     color: var(--color-headlines);
     cursor: pointer;
-    border: 3px dashed var(--color-primary);
+    padding:3px;
+    border: ridge 3px hsl(41, 31%, 36%, 0.75)
+}
+
+.blogTitle:hover{
+    background-color: var(--color-secondary);
 }
 
 .blogContent {
