@@ -2,6 +2,7 @@ import { forwardRef, useState, useEffect, useRef } from 'react'
 import Navbar from './Navbar'
 import styles from '../styles/Layout.module.css'
 import Transition from 'react-transition-group/cjs/Transition'
+import Footer from './Footer'
 
 
 const Layout = (props, ref) => {
@@ -51,9 +52,8 @@ const Layout = (props, ref) => {
         </Transition>
       </header>
       {props.children}
-      <footer className='placeholder'>
-        Footer
-      </footer>
+      <div style={{ marginBottom: '4rem' }} />
+      <Footer scrollRefs={ref}/>
     </>
   )
 }
