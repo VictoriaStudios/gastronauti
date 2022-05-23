@@ -37,7 +37,7 @@ const Modal = (props) => {
 
     return (
         <>
-            {backdropDiv !== null && modalDiv !== null ? (
+            {backdropDiv !== null && modalDiv !== null && props.enabled===true ? (
                 <>
                     {createPortal(<Backdrop handleModalClose = {props.handleModalClose} />, backdropDiv)}
                     {createPortal(<Message children={props.children} width={props.width} height={props.height} />, modalDiv)}

@@ -9,6 +9,7 @@ import Empfehlungen from '../components/Empfehlungen'
 import ContactForm from '../components/ContactForm'
 import Blog from '../components/Blog'
 import Modal from '../components/Modal'
+import Button from '../components/Button'
 
 export default function Home() {
   const introRef = useRef()
@@ -76,11 +77,10 @@ export default function Home() {
           </div>
         </main>
       </Layout>
-      {modalOpen ?
-       (<Modal handleModalClose={handleModalClose} height='30vh'>
+      <Modal enabled={modalOpen} handleModalClose={handleModalClose} height='30vh'>
         <h4>Thank you for your contact request.</h4>
         <h4>Keep in mind that this is only a demo website, not an actual business.</h4>
-      </Modal>): null}
+      </Modal>
 
     </div>
   )
