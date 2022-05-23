@@ -3,13 +3,14 @@ import styles from '../styles/ContactForm.module.css'
 import Button from './Button'
 
 const ContactForm = (props) => {
-  const [formContent, setFormContent] = useState({
+  const initContent = {
     company: '',
     familyName: '',
     firstName: '',
     email: '',
     message: ''
-  })
+  }
+  const [formContent, setFormContent] = useState(initContent)
 
   function auto_height(elem) {
     elem.style.height = "1px";
@@ -44,8 +45,9 @@ const ContactForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (props.callback) {
-      callback(formContent)
+      props.callback(formContent)
     }
+    setFormContent (initContent)
   }
 
   return (

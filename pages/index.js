@@ -32,12 +32,10 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false)
 
   const handleModalOpen = () => {
-    console.log ("Setting modal to true")
     setModalOpen (true)
   }
 
   const handleModalClose = () => {
-    console.log ("Setting modal to false")
     setModalOpen (false)
   }
 
@@ -73,7 +71,7 @@ export default function Home() {
           </div>
           <div ref={kontaktRef}>
             <div style={{ marginBottom: '4rem' }} />
-            <ContactForm />
+            <ContactForm callback={handleModalOpen}/>
           </div>
         </main>
       </Layout>
