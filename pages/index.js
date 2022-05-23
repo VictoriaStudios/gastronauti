@@ -8,7 +8,6 @@ import Kassensystem from '../components/Kassensystem'
 import Empfehlungen from '../components/Empfehlungen'
 import ContactForm from '../components/ContactForm'
 import Blog from '../components/Blog'
-import ReactDOM from 'react-dom'
 import Modal from '../components/Modal'
 
 export default function Home() {
