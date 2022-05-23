@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import More from '../components/More'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Introduction from '../components/Introduction'
 import Kassensystem from '../components/Kassensystem'
 import Empfehlungen from '../components/Empfehlungen'
@@ -29,6 +29,18 @@ export default function Home() {
     topRef: topRef,
   }
 
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const handleModalOpen = () => {
+    console.log ("Setting modal to true")
+    setModalOpen (true)
+  }
+
+  const handleModalClose = () => {
+    console.log ("Setting modal to false")
+    setModalOpen (false)
+  }
+
 
   return (
     <div ref={topRef}>
@@ -44,7 +56,7 @@ export default function Home() {
           </div>
           <More kassenRef={kassenRef} kontaktRef={kontaktRef} blogRef={blogRef} />
           <div ref={introRef}>
-          <div style={{ marginBottom: '4rem' }} />
+            <div style={{ marginBottom: '4rem' }} />
             <Introduction scrollRef={kontaktRef} />
           </div>
           <div ref={kassenRef}>
@@ -65,7 +77,12 @@ export default function Home() {
           </div>
         </main>
       </Layout>
-      <Modal enabled={true} height='30vh' message = 'Thank you for your contact request. <br/> Keep in mind that this is only a demo website, not an actual business.'/>
+      {modalOpen ?
+       (<Modal handleModalClose={handleModalClose} height='30vh'>
+        <h4>Thank you for your contact request.</h4>
+        <h4>Keep in mind that this is only a demo website, not an actual business.</h4>
+      </Modal>): null}
+
     </div>
   )
 }

@@ -2,8 +2,8 @@ import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 import styles from '../styles/Modal.module.css'
 
-const Backdrop = () => {
-    return <div className={styles.backdrop} />
+const Backdrop = (props) => {
+    return <div onClick={() => props.handleModalClose()} className={styles.backdrop} />
 }
 
 const Message = (props) => {
@@ -13,8 +13,8 @@ const Message = (props) => {
     if (props.height) height = props.height
 
     return (
-        <div>
-            <h4 style={{ width: width, height: height }} className={styles.message}>{props.message}</h4>
+        <div style={{ width: width, height: height }} className={styles.message}>
+            {props.children}
         </div>
     )
 }
@@ -29,17 +29,18 @@ const Modal = (props) => {
             let backdropDiv = document.getElementById('backdrop')
             setBackdropDiv(backdropDiv)
             let modalDiv = document.getElementById('modal')
-            console.log(modalDiv)
             setModalDiv(modalDiv)
         }
     }, [])
 
+    
+
     return (
         <>
-            {backdropDiv !== null && modalDiv !== null && props.enabled === true ? (
+            {backdropDiv !== null && modalDiv !== null ? (
                 <>
-                    {createPortal(<Backdrop />, backdropDiv)}
-                    {createPortal(<Message message={props.message} width={props.width} height={props.height} />, modalDiv)}
+                    {createPortal(<Backdrop handleModalClose = {props.handleModalClose} />, backdropDiv)}
+                    {createPortal(<Message children={props.children} width={props.width} height={props.height} />, modalDiv)}
                 </>
             ) : null
             }
