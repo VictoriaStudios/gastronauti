@@ -9,6 +9,7 @@ import Empfehlungen from '../components/Empfehlungen'
 import ContactForm from '../components/ContactForm'
 import Blog from '../components/Blog'
 import ReactDOM from 'react-dom'
+import Modal from '../components/Modal'
 
 export default function Home() {
   const introRef = useRef()
@@ -64,6 +65,7 @@ export default function Home() {
           </div>
         </main>
       </Layout>
+      <Modal enabled={true} message = 'test'/>
     </div>
   )
 }

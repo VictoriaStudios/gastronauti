@@ -1,0 +1,17 @@
+.backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.message {
+    color: var(--color-secondary);
+    position: fixed;
+    z-index: 60;
+    top:50%;
+    transform: translateY(-50%);
+    margin:auto;
+
+}

@@ -25,6 +25,7 @@ const Footer = (props) => {
                 </div>
             </section>
             <hr style={{ borderColor: '#DBD6CC'}}/>
+            <h4 className={styles.footerSignature}>Gastronauti - A demo SaaS website</h4>
             <h4 className={styles.footerSignature}>© Marcel Bruna 2022</h4>
 
         </footer>
