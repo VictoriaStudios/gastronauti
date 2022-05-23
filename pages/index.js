@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </main>
       </Layout>
-      <Modal enabled={true} message = 'test'/>
+      <Modal enabled={true} height='30vh' message = 'Thank you for your contact request. <br/> Keep in mind that this is only a demo website, not an actual business.'/>
     </div>
   )
 }
