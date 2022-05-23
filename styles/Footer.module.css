@@ -2,8 +2,8 @@
     position: relative;
     width: 100vw;
     background-color: #2F3234;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
 }
 
 .footerBody {
@@ -11,6 +11,7 @@
     display: flex;
     width: 80%;
     justify-content: space-around;
+    padding-bottom: 1rem;
 }
 
 .footerLogoWrapper {

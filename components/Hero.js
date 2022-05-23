@@ -12,7 +12,7 @@ const Hero = (props) => {
 
 
   return (
-    <div className={styles.heroWrapper}>
+    <section className={styles.heroWrapper}>
       <Image
         className={styles.heroBG}
         src='/hero_bg.jpg'
@@ -29,7 +29,7 @@ const Hero = (props) => {
           <h1 className={`${styles.heroLineTitle} ${styles.heroHighlight}`} onClick={() => handleScroll(props.scrollRef)} style={{ display: "inline" }}>Solution</h1>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
