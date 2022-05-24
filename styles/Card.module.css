@@ -29,7 +29,7 @@
     text-overflow: ellipsis;
 }
 
-@media (max-width:1150px) {
+@media (max-width:1350px) {
     .cardBody{
         margin: 10px 30px 10px 30px;
     }
