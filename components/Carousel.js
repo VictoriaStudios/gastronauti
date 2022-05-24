@@ -10,7 +10,6 @@ const Carousel = (props) => {
   const [shownIndex, setShownIndex] = useState(0)
   const [showElements, setShowElements] = useState(true)
   const {width, height} = useWindowDimensions()
-  let visAmount = 3
   const transTime = 300
 
   const handleNext = () => {
@@ -38,7 +37,9 @@ const Carousel = (props) => {
   }
 
   useEffect(() => {
-
+    let visAmount = 3
+    if (width < 1000) visAmount = 2
+    if (width < 700) visAmount = 1
     if (props.children) {
       //create a two dimensional array, where the first dimension is the index of the three elements to be shown
       let preppedArray = []
@@ -54,7 +55,7 @@ const Carousel = (props) => {
     }
 
 
-  }, [props.children, shownIndex])
+  }, [props.children, shownIndex, width])
 
 
 

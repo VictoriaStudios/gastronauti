@@ -29,13 +29,21 @@ a {
 }
 
 h1 {
-  font-size:2rem;
+  font-size:2.5rem;
   margin:.75rem;
 }
 
 h2{
-  font-size:1.5rem;
+  font-size:2rem;
   margin:.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 .nav-wrapper {
