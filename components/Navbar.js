@@ -6,7 +6,7 @@ import { scrollTo } from '../utilities/scrollTo'
 const Navbar = (props, ref) => {
   return (
       <nav className={styles.navWrapper}>
-        <div className={styles.navElement} onClick={() => scrollTo(ref.topRef)} style={{ position: 'relative', top: '7px' }}>
+        <div className={styles.navElement} onClick={() => scrollTo(ref.topRef)}>
           <Image
             src='/logo.png'
             width='30'
