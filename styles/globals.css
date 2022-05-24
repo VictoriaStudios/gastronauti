@@ -57,3 +57,23 @@ h4 {
   border-style: dotted;
   border-color: rgb(255, 255, 93);
 }
+
+@media (max-width:650px) {
+  h1 {
+    font-size:2rem;
+    margin:.5rem;
+  }
+  
+  h2{
+    font-size:1.5rem;
+    margin:.25rem;
+  }
+  
+  h3 {
+    font-size: 1rem;
+  }
+  
+  h4 {
+    font-size: .75rem;
+  }
+}
