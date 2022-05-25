@@ -76,7 +76,7 @@ export default function Home() {
         </main>
       </Layout>
       <Modal enabled={modalOpen} handleModalClose={handleModalClose} height='30vh'>
-        <h4>Thank you for your contact request.</h4>
+        <h4>Thank you for filling out the contact form.</h4>
         <h4>Keep in mind that this is only a demo website, not an actual business.</h4>
       </Modal>
 

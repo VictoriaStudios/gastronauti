@@ -2,17 +2,17 @@
     display: grid;
     grid-template-columns: 2fr .5fr 4fr 2fr 2fr;
     gap: 2rem;
-    width:80vw;
-    margin:auto;
+    width: 80vw;
+    margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border-style:ridge;
+    border-style: ridge;
     border-color: var(--color-primary);
-    padding:2rem;
+    padding: 2rem;
 }
 
-.formItem{
-    margin:0;
+.formItem {
+    margin: 0;
     padding: 0;
 }
 
@@ -43,14 +43,20 @@
     grid-column: 3/span 3;
 }
 
+.formError {
+    color: hsl(10, 100%, 35%)
+}
+
 @media (max-width: 800px) {
     .formCaption {
         text-align: left;
         grid-column: 1 /span 3;
     }
+
     .formLargeField {
         grid-column: 1/span 4;
     }
+
     .formFirstField {
         grid-column: 1/span 3;
     }
@@ -61,9 +67,11 @@
         text-align: left;
         grid-column: 1 /span 4;
     }
+
     .formLargeField {
         grid-column: 1/span 5;
     }
+
     .formFirstField {
         grid-column: 1/span 4;
     }
