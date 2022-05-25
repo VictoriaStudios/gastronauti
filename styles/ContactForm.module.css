@@ -28,7 +28,7 @@
 
 
 .formLargeField {
-    grid-column: 3/span 2
+    grid-column: 3/span 2;
 }
 
 .formFirstField {
@@ -43,3 +43,28 @@
     grid-column: 3/span 3;
 }
 
+@media (max-width: 800px) {
+    .formCaption {
+        text-align: left;
+        grid-column: 1 /span 3;
+    }
+    .formLargeField {
+        grid-column: 1/span 4;
+    }
+    .formFirstField {
+        grid-column: 1/span 3;
+    }
+}
+
+@media (max-width: 400px) {
+    .formCaption {
+        text-align: left;
+        grid-column: 1 /span 4;
+    }
+    .formLargeField {
+        grid-column: 1/span 5;
+    }
+    .formFirstField {
+        grid-column: 1/span 4;
+    }
+}
