@@ -51,20 +51,7 @@
 }
 
 
-
-
-
-@media (max-width:720px) {
-    .heroTitle {
-        font-size: 1.5rem;
-    }
-
-    .heroLineTitle{
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width:500px) {
+@media (max-width:1500px) {
     .heroCard {
         width: 90%;
         margin:auto;
@@ -72,54 +59,5 @@
         top: 5%;
         transform: translateY(0%);
     }
-}
-
-@media (orientation:landscape) and (max-height:750px){
-    .heroCard {
-        width: 90%;
-        top: 5%;
-        left:0%;
-        transform: translateY(0%);
-        flex-direction: row;
-        margin:auto;
-        height:none;
-        margin-block-end: 0;
-        margin-block-start: 0;
-    }
-    .heroWrapper {
-        position: relative;
-        width: 100vw;
-    }
-    .heroTitle {
-        font-size: 1.5rem;
-    }
-
-    .heroLineTitle{
-        font-size: 1.5rem;
-    }
-}
-
-@media (orientation:landscape) and (max-height:450px){
-    .heroCard {
-        width: 90%;
-        top: 5%;
-        left:0%;
-        transform: translateY(0%);
-        flex-direction: row;
-        margin:auto;
-        height:none;
-        margin-block-end: 0;
-        margin-block-start: 0;
-    }
-    .heroWrapper {
-        position: relative;
-        width: 100vw;
-    }
-    .heroTitle {
-        font-size: 1rem;
-    }
-
-    .heroLineTitle{
-        font-size: 1rem;
-    }
+    
 }
