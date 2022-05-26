@@ -1,8 +1,12 @@
 .sidebarWrapper {
-    width: 90vw;
-    min-height: 65vh;
     position: fixed;
+    top: 5vh;
+    width: 90vw;
+    min-height: 90vh;
     z-index: 40;
     background-color: white;
-    opacity: .8;
+    opacity: .9;
+    border-radius: 5px;
+    border: solid 1px var(--color-secondary);
+    left: -85vw;
 }
