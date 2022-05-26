@@ -12,7 +12,7 @@ const Layout = (props, ref) => {
   const [navSticky, setNavSticky] = useState(false)
   const [sidebarVis, setSidebarVis] = useState(false)
   const { width, height } = useWindowDimensions()
-  let headerSize = 0
+  let headerSize = 50
   const headerRef = useRef()
   const transTime = 200
 
@@ -22,17 +22,16 @@ const Layout = (props, ref) => {
   }
 
   const handleScroll = () => {
-    console.log ("handlescroll")
-    if (window.scrollY >= headerSize * 2 && !navSticky) {
+    console.log ("scrollY: " + window.scrollY)
+    if (window.scrollY >= headerSize && !navSticky) {
       setNavSticky(true)
     }
-    else if (window.scrollY < headerSize * 2 && navSticky) {
+    else if (window.scrollY < headerSize && navSticky) {
       setNavSticky(false)
     }
   }
 
   useEffect(() => {
-    headerSize = getHeaderSize()
     handleScroll()
     window.addEventListener("scroll", handleScroll);
     return () => {
