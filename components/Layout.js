@@ -8,10 +8,10 @@ import useWindowDimensions from './utils/useWindowDimensions'
 
 
 const Layout = (props, ref) => {
-  const [navSticky, setNavSticky] = useState(false)
   const [narrowMode, setNarrowMode] = useState(false)
+  const [navSticky, setNavSticky] = useState(false)
   const [sidebarVis, setSidebarVis] = useState(false)
-  const {width, height} = useWindowDimensions()
+  const { width, height } = useWindowDimensions()
   let headerSize = 0
   const headerRef = useRef()
   const transTime = 200
@@ -22,10 +22,11 @@ const Layout = (props, ref) => {
   }
 
   const handleScroll = () => {
-    if (window.scrollY >= headerSize*2 && !navSticky) {
+    console.log ("handlescroll")
+    if (window.scrollY >= headerSize * 2 && !navSticky) {
       setNavSticky(true)
     }
-    else if (window.scrollY < headerSize*2 && navSticky) {
+    else if (window.scrollY < headerSize * 2 && navSticky) {
       setNavSticky(false)
     }
   }
@@ -37,29 +38,34 @@ const Layout = (props, ref) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     }
-  }, [navSticky])
+  }, [navSticky, narrowMode])
 
   return (
     <>
       <header ref={headerRef}>
-        <Sidebar><Navbar ref={ref} vertical={true}/></Sidebar>
-        {!navSticky && !sidebarVis ? <Navbar ref={ref} /> : <div style={{ visibility: 'hidden' }}><Navbar ref={ref} /></div>}
+        {/* <Sidebar><Navbar ref={ref} vertical={true}/></Sidebar> */}
+        {!narrowMode ? (
+          <>
+          {!navSticky ? <Navbar ref={ref} /> : <div style={{ visibility: 'hidden' }}><Navbar ref={ref} /></div>}
         <Transition in={navSticky} timeout={transTime}>
           {state => (
             <>
-            <div style={{
-              transition: `all ${transTime}ms ease-in-out`,
-              top: state === 'entering' ? 0 : state === 'entered' ? 0 : '-10%',
-              height: state === 'entering' ? `${headerSize}px` : state === 'entered' ? `${headerSize}px` : 0
-            }} 
-            className={styles.sticky} ><Navbar ref={ref} /></div>
+              <div style={{
+                transition: `all ${transTime}ms ease-in-out`,
+                top: state === 'entering' ? 0 : state === 'entered' ? 0 : '-10%',
+                height: state === 'entering' ? `${headerSize}px` : state === 'entered' ? `${headerSize}px` : 0
+              }}
+                className={styles.sticky} ><Navbar ref={ref} /></div>
             </>
           )}
         </Transition>
+        </>
+        ): null}
+
       </header>
       {props.children}
       <div style={{ marginBottom: '4rem' }} />
-      <Footer scrollRefs={ref}/>
+      <Footer scrollRefs={ref} />
     </>
   )
 }

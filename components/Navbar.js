@@ -8,7 +8,7 @@ const Navbar = (props, ref) => {
   justifyContent:'space-evenly',
   height: '50vh',
   alignItems: 'flex-start',
-  marginLeft: '5rem'}
+  marginLeft: '2rem'}
 
   return (
       <nav style={props.vertical === true ?  verticalStyle : null} className={styles.navWrapper}>
