@@ -22,7 +22,6 @@ const Layout = (props, ref) => {
   }
 
   const handleScroll = () => {
-    console.log ("scrollY: " + window.scrollY)
     if (window.scrollY >= headerSize && !navSticky) {
       setNavSticky(true)
     }
@@ -39,27 +38,33 @@ const Layout = (props, ref) => {
     }
   }, [navSticky, narrowMode])
 
+  useEffect(() => {
+    if (width < 460 && !narrowMode) setNarrowMode(true)
+    if (width >= 460 && narrowMode) setNarrowMode(false)
+  }, [width])
+
   return (
     <>
       <header ref={headerRef}>
-        {/* <Sidebar><Navbar ref={ref} vertical={true}/></Sidebar> */}
         {!narrowMode ? (
           <>
-          {!navSticky ? <Navbar ref={ref} /> : <div style={{ visibility: 'hidden' }}><Navbar ref={ref} /></div>}
-        <Transition in={navSticky} timeout={transTime}>
-          {state => (
-            <>
-              <div style={{
-                transition: `all ${transTime}ms ease-in-out`,
-                top: state === 'entering' ? 0 : state === 'entered' ? 0 : '-10%',
-                height: state === 'entering' ? `${headerSize}px` : state === 'entered' ? `${headerSize}px` : 0
-              }}
-                className={styles.sticky} ><Navbar ref={ref} /></div>
-            </>
-          )}
-        </Transition>
-        </>
-        ): null}
+            {!navSticky ? <Navbar ref={ref} /> : <div style={{ visibility: 'hidden' }}><Navbar ref={ref} /></div>}
+            <Transition in={navSticky} timeout={transTime}>
+              {state => (
+                <>
+                  <div style={{
+                    transition: `all ${transTime}ms ease-in-out`,
+                    top: state === 'entering' ? 0 : state === 'entered' ? 0 : '-10%',
+                    height: state === 'entering' ? `${headerSize}px` : state === 'entered' ? `${headerSize}px` : 0
+                  }}
+                    className={styles.sticky} ><Navbar ref={ref} /></div>
+                </>
+              )}
+            </Transition>
+          </>
+        ) :
+          <Sidebar><Navbar ref={ref} vertical={true} /></Sidebar>
+        }
 
       </header>
       {props.children}

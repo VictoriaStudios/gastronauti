@@ -6,9 +6,10 @@ import { scrollTo } from '../utilities/scrollTo'
 const Navbar = (props, ref) => {
   const verticalStyle = {flexDirection: 'column',
   justifyContent:'space-evenly',
-  height: '50vh',
+  height: '80vh',
   alignItems: 'flex-start',
-  marginLeft: '2rem'}
+  marginLeft: '2rem',
+}
 
   return (
       <nav style={props.vertical === true ?  verticalStyle : null} className={styles.navWrapper}>
