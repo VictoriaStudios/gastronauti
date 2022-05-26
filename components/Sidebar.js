@@ -3,7 +3,9 @@ import styles from '../styles/Sidebar.module.css'
 
 const Sidebar = (props) => {
   return (
-    <aside className={styles.sidebarWrapper}>This is the sidebar</aside>
+    <aside className={styles.sidebarWrapper}>
+      {props.children}
+    </aside>
   )
 }
 

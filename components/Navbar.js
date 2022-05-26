@@ -4,8 +4,14 @@ import Image from 'next/image'
 import { scrollTo } from '../utilities/scrollTo'
 
 const Navbar = (props, ref) => {
+  const verticalStyle = {flexDirection: 'column',
+  justifyContent:'space-evenly',
+  height: '50vh',
+  alignItems: 'flex-start',
+  marginLeft: '5rem'}
+
   return (
-      <nav className={styles.navWrapper}>
+      <nav style={props.vertical === true ?  verticalStyle : null} className={styles.navWrapper}>
         <div className={styles.navElement} onClick={() => scrollTo(ref.topRef)}>
           <Image
             src='/logo.png'

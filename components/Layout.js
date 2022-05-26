@@ -9,6 +9,7 @@ import useWindowDimensions from './utils/useWindowDimensions'
 
 const Layout = (props, ref) => {
   const [navSticky, setNavSticky] = useState(false)
+  const [narrowMode, setNarrowMode] = useState(false)
   const [sidebarVis, setSidebarVis] = useState(false)
   const {width, height} = useWindowDimensions()
   let headerSize = 0
@@ -41,7 +42,7 @@ const Layout = (props, ref) => {
   return (
     <>
       <header ref={headerRef}>
-        <Sidebar/>
+        <Sidebar><Navbar ref={ref} vertical={true}/></Sidebar>
         {!navSticky && !sidebarVis ? <Navbar ref={ref} /> : <div style={{ visibility: 'hidden' }}><Navbar ref={ref} /></div>}
         <Transition in={navSticky} timeout={transTime}>
           {state => (
