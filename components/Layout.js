@@ -30,6 +30,10 @@ const Layout = (props, ref) => {
     }
   }
 
+  const toggleSidebar = () => {
+    setSidebarVis(!sidebarVis)
+  }
+
   useEffect(() => {
     handleScroll()
     window.addEventListener("scroll", handleScroll);
@@ -63,8 +67,16 @@ const Layout = (props, ref) => {
             </Transition>
           </>
         ) :
-          <Sidebar><Navbar ref={ref} vertical={true} /></Sidebar>
-        }
+          <Transition in={sidebarVis} timeout={transTime}>
+            {state => (
+              <>
+                <Sidebar onClick={toggleSidebar} onClose={toggleSidebar} transState={state} transTime={transTime}>
+                  <Navbar ref={ref} vertical={true} />
+                </Sidebar>
+              </>
+            )}
+          </Transition>}
+
 
       </header>
       {props.children}
