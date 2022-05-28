@@ -9,6 +9,7 @@ const Carousel = (props) => {
   const [currElements, setCurrElements] = useState([])
   const [shownIndex, setShownIndex] = useState(0)
   const [showElements, setShowElements] = useState(true)
+  const [visAmount, setVisAmount] = useState (3)
   const {width, height} = useWindowDimensions()
   const transTime = 300
 
@@ -37,21 +38,27 @@ const Carousel = (props) => {
   }
 
   useEffect(() => {
-    console.log ("Useeffect triggered")
-    let visAmount = 3
-    if (width < 1000) visAmount = 2
-    if (width < 700) visAmount = 1
+    let newVisAmount = 3
+    if (width < 1000) newVisAmount = 2
+    if (width < 700) newVisAmount = 1
     if (props.children) {
       //create a two dimensional array, where the first dimension is the index of the current elements to be shown
       let preppedArray = []
       for (let i = 0; i < props.children.length; i++) {
-        if (i % visAmount === 0) {
-          preppedArray.push(props.children.slice(i, i + visAmount))
+        if (i % newVisAmount === 0) {
+          preppedArray.push(props.children.slice(i, i + newVisAmount))
         }
       }
-      setCurrElements(preppedArray[0])
-      setShownIndex (0)
       setAllElements(preppedArray)
+      if (newVisAmount !== visAmount) {
+        setCurrElements(preppedArray[0])
+        setShownIndex (0)
+      }
+      else {
+        setCurrElements (preppedArray[shownIndex])
+      }
+      setVisAmount(newVisAmount)
+      
     }
 
 
