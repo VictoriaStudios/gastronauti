@@ -43,10 +43,8 @@ const Carousel = (props) => {
     if (props.children) {
       //create a two dimensional array, where the first dimension is the index of the three elements to be shown
       let preppedArray = []
-      let currIndex = -1
       for (let i = 0; i < props.children.length; i++) {
         if (i % visAmount === 0) {
-          currIndex++
           preppedArray.push(props.children.slice(i, i + visAmount))
         }
       }
