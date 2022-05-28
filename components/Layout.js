@@ -70,7 +70,7 @@ const Layout = (props, ref) => {
           <Transition in={sidebarVis} timeout={transTime}>
             {state => (
               <>
-                <Sidebar onClick={toggleSidebar} onClose={toggleSidebar} transState={state} transTime={transTime}>
+                <Sidebar sidebarVis={sidebarVis} onClick={toggleSidebar} onClose={toggleSidebar} transState={state} transTime={transTime}>
                   <Navbar ref={ref} vertical={true} />
                 </Sidebar>
               </>

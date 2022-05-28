@@ -2,9 +2,9 @@ import styles from '../styles/Sidebar.module.css'
 
 const Sidebar = (props) => {
 
-
   let state = props.transState
   return (
+    <>
     <aside style={{
       transition: `all 75ms ease-in-out`,
       left: state === 'entering' || state === 'entered' ? 0 : '-83vw'
@@ -15,6 +15,8 @@ const Sidebar = (props) => {
       </div>
       {props.children}
     </aside>
+    { props.sidebarVis ?  <div onClick={props.onClick} className={styles.backClickArea}/> : null}
+    </>
   )
 }
 
