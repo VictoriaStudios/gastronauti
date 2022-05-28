@@ -37,23 +37,25 @@ const Carousel = (props) => {
   }
 
   useEffect(() => {
+    console.log ("Useeffect triggered")
     let visAmount = 3
     if (width < 1000) visAmount = 2
     if (width < 700) visAmount = 1
     if (props.children) {
-      //create a two dimensional array, where the first dimension is the index of the three elements to be shown
+      //create a two dimensional array, where the first dimension is the index of the current elements to be shown
       let preppedArray = []
       for (let i = 0; i < props.children.length; i++) {
         if (i % visAmount === 0) {
           preppedArray.push(props.children.slice(i, i + visAmount))
         }
       }
-      setCurrElements(preppedArray[shownIndex])
+      setCurrElements(preppedArray[0])
+      setShownIndex (0)
       setAllElements(preppedArray)
     }
 
 
-  }, [props.children, shownIndex, width])
+  }, [props.children, width])
 
 
 
