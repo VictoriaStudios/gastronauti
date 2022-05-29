@@ -17,6 +17,7 @@ export const Card = (props) => {
                             src={props.src}
                             height={props.imgWidth || 100}
                             width={props.imgWidth || 100}
+                            alt = {props.alt}
                         /> : ''}
                     </div>
                     <div className={styles.cardText}>

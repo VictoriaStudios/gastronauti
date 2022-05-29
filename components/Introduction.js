@@ -14,6 +14,7 @@ const Introduction = (props) => {
                         src='/video-placeholder.png'
                         layout='fill'
                         objectFit='contain'
+                        alt= 'A placeholder picture for a company video'
                     />
                 </div>
                 <div className={styles.introText}>

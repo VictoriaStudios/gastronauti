@@ -45,7 +45,7 @@ const Layout = (props, ref) => {
   useEffect(() => {
     if (width < 460 && !narrowMode) setNarrowMode(true)
     if (width >= 460 && narrowMode) setNarrowMode(false)
-  }, [width])
+  }, [width, narrowMode])
 
   return (
     <>

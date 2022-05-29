@@ -13,7 +13,7 @@ const Footer = (props) => {
                         src='/logo.png'
                         width={logoSize}
                         height={logoSize}
-
+                        alt='The Gastronauti Logo'
                     />
                 </div>
                 <div style={{ width: '10%' }} />
@@ -24,7 +24,7 @@ const Footer = (props) => {
                     <a className={styles.navElement} onClick={() => scrollTo(props.scrollRefs.kontaktRef)}> Contact </a>
                 </div>
             </section>
-            <hr style={{ borderColor: '#DBD6CC'}}/>
+            <hr style={{ borderColor: '#DBD6CC' }} />
             <h4 className={styles.footerSignature}>Gastronauti - A demo SaaS website</h4>
             <h4 className={styles.footerSignature}>© Marcel Bruna 2022</h4>
 

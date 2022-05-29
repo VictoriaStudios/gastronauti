@@ -18,6 +18,7 @@ const Navbar = (props, ref) => {
             src='/logo.png'
             width='30'
             height='30'
+            alt='The Gastronauti Logo'
           />
         </div>
         <a className={styles.navElement} onClick={() => scrollTo(ref.kassenRef)}> Modules </a>

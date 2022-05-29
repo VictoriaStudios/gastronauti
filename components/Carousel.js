@@ -75,6 +75,7 @@ const Carousel = (props) => {
           src='/carousel_arrow.svg'
           width={50}
           height={50}
+          alt='load previous elements'
         />
         <Transition in={showElements} timeout={transTime} style={{flexGrow:'1'}}>
           {state => (
@@ -100,6 +101,7 @@ const Carousel = (props) => {
           src='/carousel_arrow.svg'
           width={50}
           height={50}
+          alt='load previous elements'
         />
       </div>
     </section>
