@@ -14,6 +14,7 @@ const Kassensystem = (props) => {
                         src='/checkout.png'
                         layout='fill'
                         objectFit='contain'
+                        alt = 'An example picture of the checkout system'
                     />
                 </div>
                 <div className={styles.kassenText}>

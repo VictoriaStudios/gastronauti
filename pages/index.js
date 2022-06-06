@@ -9,7 +9,6 @@ import Empfehlungen from '../components/Empfehlungen'
 import ContactForm from '../components/ContactForm'
 import Blog from '../components/Blog'
 import Modal from '../components/Modal'
-import Button from '../components/Button'
 
 export default function Home() {
   const introRef = useRef()

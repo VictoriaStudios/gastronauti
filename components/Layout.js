@@ -3,11 +3,16 @@ import Navbar from './Navbar'
 import styles from '../styles/Layout.module.css'
 import Transition from 'react-transition-group/cjs/Transition'
 import Footer from './Footer'
+import Sidebar from './Sidebar'
+import useWindowDimensions from './utils/useWindowDimensions'
 
 
 const Layout = (props, ref) => {
+  const [narrowMode, setNarrowMode] = useState(false)
   const [navSticky, setNavSticky] = useState(false)
-  let headerSize = 0
+  const [sidebarVis, setSidebarVis] = useState(false)
+  const { width, height } = useWindowDimensions()
+  let headerSize = 50
   const headerRef = useRef()
   const transTime = 200
 
@@ -17,43 +22,66 @@ const Layout = (props, ref) => {
   }
 
   const handleScroll = () => {
-    if (window.scrollY >= headerSize*2 && !navSticky) {
+    if (window.scrollY >= headerSize && !navSticky) {
       setNavSticky(true)
     }
-    else if (window.scrollY < headerSize*2 && navSticky) {
+    else if (window.scrollY < headerSize && navSticky) {
       setNavSticky(false)
     }
   }
 
+  const toggleSidebar = () => {
+    setSidebarVis(!sidebarVis)
+  }
+
   useEffect(() => {
-    headerSize = getHeaderSize()
     handleScroll()
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     }
-  }, [navSticky])
+  }, [navSticky, narrowMode])
+
+  useEffect(() => {
+    if (width < 460 && !narrowMode) setNarrowMode(true)
+    if (width >= 460 && narrowMode) setNarrowMode(false)
+  }, [width, narrowMode])
 
   return (
     <>
       <header ref={headerRef}>
-        {!navSticky ? <Navbar ref={ref} /> : <div style={{ visibility: 'hidden' }}><Navbar ref={ref} /></div>}
-        <Transition in={navSticky} timeout={transTime}>
-          {state => (
-            <>
-            <div style={{
-              transition: `all ${transTime}ms ease-in-out`,
-              top: state === 'entering' ? 0 : state === 'entered' ? 0 : '-10%',
-              height: state === 'entering' ? `${headerSize}px` : state === 'entered' ? `${headerSize}px` : 0
-            }} 
-            className={styles.sticky} ><Navbar ref={ref} /></div>
-            </>
-          )}
-        </Transition>
+        {!narrowMode ? (
+          <>
+            {!navSticky ? <Navbar ref={ref} /> : <div style={{ visibility: 'hidden' }}><Navbar ref={ref} /></div>}
+            <Transition in={navSticky} timeout={transTime}>
+              {state => (
+                <>
+                  <div style={{
+                    transition: `all ${transTime}ms ease-in-out`,
+                    top: state === 'entering' ? 0 : state === 'entered' ? 0 : '-10%',
+                    height: state === 'entering' ? `${headerSize}px` : state === 'entered' ? `${headerSize}px` : 0
+                  }}
+                    className={styles.sticky} ><Navbar ref={ref} /></div>
+                </>
+              )}
+            </Transition>
+          </>
+        ) :
+          <Transition in={sidebarVis} timeout={transTime}>
+            {state => (
+              <>
+                <Sidebar sidebarVis={sidebarVis} onClick={toggleSidebar} onClose={toggleSidebar} transState={state} transTime={transTime}>
+                  <Navbar ref={ref} vertical={true} />
+                </Sidebar>
+              </>
+            )}
+          </Transition>}
+
+
       </header>
       {props.children}
       <div style={{ marginBottom: '4rem' }} />
-      <Footer scrollRefs={ref}/>
+      <Footer scrollRefs={ref} />
     </>
   )
 }

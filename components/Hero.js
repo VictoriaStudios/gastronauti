@@ -19,6 +19,7 @@ const Hero = (props) => {
         layout='fill'
         objectFit='cover'
         priority='true'
+        alt='A service employee at a café'
       />
       <div className={styles.heroCard}>
         <h1 className={styles.heroTitle}>Increase Revenue.</h1>
