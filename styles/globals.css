@@ -10,6 +10,7 @@
 
 html,
 body {
+  scroll-padding-top: 50px;
   background-color: #FCFCFC;
   padding: 0;
   margin: 0;

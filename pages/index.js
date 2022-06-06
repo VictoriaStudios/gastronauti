@@ -54,23 +54,18 @@ export default function Home() {
           </div>
           <More kassenRef={kassenRef} kontaktRef={kontaktRef} blogRef={blogRef} />
           <div ref={introRef}>
-            <div style={{ marginBottom: '4rem' }} />
             <Introduction scrollRef={kontaktRef} />
           </div>
           <div ref={kassenRef}>
-            <div style={{ marginBottom: '4rem' }} />
             <Kassensystem scrollRef={kontaktRef} />
           </div>
           <div ref={blogRef}>
-            <div style={{ marginBottom: '4rem' }} />
             <Blog ref={blogRef} />
           </div>
           <div ref={empfehlungsRef}>
-            <div style={{ marginBottom: '4rem' }} />
             <Empfehlungen />
           </div>
           <div ref={kontaktRef}>
-            <div style={{ marginBottom: '4rem' }} />
             <ContactForm callback={handleModalOpen}/>
           </div>
         </main>
